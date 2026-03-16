@@ -1,0 +1,77 @@
+:root {
+  --paper: #fffaff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.72), transparent 35%),
+    radial-gradient(circle at 80% 70%, rgba(209, 199, 209, 0.18), transparent 28%),
+    linear-gradient(180deg, #fffcff 0%, var(--paper) 100%);
+}
+
+#background-canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+.overlay {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: min(720px, calc(100vw - 2rem));
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.title-block {
+  pointer-events: none;
+}
+
+.site-title,
+.site-subtitle {
+  color: #d1c7d1;
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 50px;
+  line-height: 1.1;
+}
+
+.site-subtitle {
+  margin: 0.45rem 0 0;
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.episode-card {
+  margin: 1.75rem auto 0;
+  width: min(620px, 100%);
+  pointer-events: auto;
+}
+
+.episode-card iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  opacity: 0.92;
+}
