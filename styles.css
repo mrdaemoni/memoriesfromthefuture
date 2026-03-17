@@ -11,10 +11,11 @@ body {
   margin: 0;
   width: 100%;
   min-height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.72), transparent 35%),
     radial-gradient(circle at 80% 70%, rgba(209, 199, 209, 0.18), transparent 28%),
@@ -22,23 +23,73 @@ body {
 }
 
 #background-canvas {
+  position: fixed;
+  inset: 0;
   display: block;
   width: 100vw;
   height: 100vh;
 }
 
-.overlay {
+.site-nav {
   position: fixed;
+  top: 1.4rem;
+  left: 50%;
+  z-index: 3;
+  display: flex;
+  gap: 1.4rem;
+  transform: translateX(-50%);
+  font-family: "Libre Bodoni", serif;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.site-nav a,
+.subscribe-link {
+  color: #d1c7d1;
+  text-decoration: none;
+}
+
+.site-nav a {
+  opacity: 0.88;
+}
+
+.site-nav a[aria-current="page"] {
+  opacity: 1;
+}
+
+.site-nav a:hover,
+.subscribe-link:hover {
+  opacity: 1;
+}
+
+.page-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.home-section {
+  position: relative;
+  min-height: 100vh;
+}
+
+.overlay {
+  position: absolute;
   inset: 50% auto auto 50%;
   transform: translate(-50%, -50%);
   width: min(720px, calc(100vw - 2rem));
   text-align: center;
-  pointer-events: none;
   z-index: 1;
 }
 
 .title-block {
   pointer-events: none;
+  --memory-blur: 0px;
+  --memory-shift-x: 0px;
+  --memory-shift-y: 0px;
+  --memory-opacity: 0.9;
+  --memory-edge-glow: 0.12;
 }
 
 .site-title,
@@ -48,6 +99,15 @@ body {
   font-optical-sizing: auto;
   font-style: italic;
   font-weight: 400;
+  opacity: var(--memory-opacity);
+  transform: translate(var(--memory-shift-x), var(--memory-shift-y));
+  filter: blur(var(--memory-blur));
+  text-shadow:
+    0 0 12px rgba(209, 199, 209, calc(var(--memory-edge-glow) * 1)),
+    0 0 28px rgba(209, 199, 209, calc(var(--memory-edge-glow) * 0.72)),
+    0 0 52px rgba(209, 199, 209, calc(var(--memory-edge-glow) * 0.42));
+  animation: memory-shimmer 7.2s ease-in-out infinite alternate;
+  will-change: transform, filter, opacity;
 }
 
 .site-title {
@@ -60,6 +120,7 @@ body {
   margin: 0.45rem 0 0;
   font-size: 30px;
   line-height: 1.15;
+  animation-duration: 9.6s;
 }
 
 .episode-card {
@@ -74,4 +135,349 @@ body {
   border: 0;
   border-radius: 12px;
   opacity: 0.92;
+}
+
+.subscribe-link {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-family: "Libre Bodoni", serif;
+  font-size: 20px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.content-section {
+  position: relative;
+  min-height: 65vh;
+  padding: 6rem 1.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.section-card {
+  width: min(760px, 100%);
+  padding: 2.25rem 2rem;
+  border-radius: 28px;
+  background: rgba(255, 250, 255, 0.32);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 40px rgba(209, 199, 209, 0.08);
+}
+
+.section-label,
+.section-card h2,
+.section-card p {
+  color: #d1c7d1;
+}
+
+.section-label {
+  margin: 0 0 0.75rem;
+  font-family: "Libre Bodoni", serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.section-card h2 {
+  margin: 0;
+  font-family: "Libre Bodoni", serif;
+  font-size: clamp(34px, 4.4vw, 52px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.section-card p {
+  margin: 1.1rem 0 0;
+  font-family: "Libre Bodoni", serif;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 1.4;
+  opacity: 0.92;
+}
+
+.about-body p {
+  color: #7a707a;
+  font-size: 14pt;
+  font-style: normal;
+  font-weight: 400;
+  opacity: 1;
+}
+
+.notes-page .site-nav {
+  top: 1rem;
+}
+
+.episode-nav {
+  position: fixed;
+  top: 3.7rem;
+  left: 50%;
+  z-index: 3;
+  display: flex;
+  gap: 0.8rem;
+  transform: translateX(-50%);
+}
+
+.episode-nav a {
+  color: #d1c7d1;
+  text-decoration: none;
+  font-family: "Libre Bodoni", serif;
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.92;
+}
+
+.episode-nav span {
+  color: #d1c7d1;
+  font-family: "Libre Bodoni", serif;
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.5;
+}
+
+.notes-shell {
+  position: relative;
+  z-index: 1;
+  padding: 7.5rem 1.5rem 5rem;
+}
+
+.notes-episode {
+  width: min(860px, 100%);
+  margin: 0 auto;
+  padding: 1.25rem;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 52px rgba(209, 199, 209, 0.12);
+}
+
+.notes-hero {
+  padding: 2rem 1.7rem 1.35rem;
+  border-radius: 24px;
+}
+
+.notes-title,
+.idea-item h2,
+.source-note h2,
+.next-note-block h2 {
+  margin: 0;
+  color: #887d88;
+  font-family: "Libre Bodoni", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.notes-title {
+  font-size: clamp(44px, 6vw, 74px);
+  line-height: 1.02;
+}
+
+.notes-subtitle,
+.notes-meta,
+.notes-copy p,
+.notes-intro,
+.idea-item p,
+.source-note p,
+.reading-list li,
+.next-note-block p {
+  color: #6e646e;
+  font-family: "Libre Bodoni", serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.notes-subtitle {
+  margin: 0.75rem 0 0;
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.notes-meta {
+  margin: 0.5rem 0 0;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.notes-block {
+  margin-top: 1rem;
+  padding: 1.35rem 1.7rem;
+  border-top: 1px solid rgba(160, 146, 160, 0.14);
+}
+
+.provocation-block p {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.32;
+  color: #746974;
+}
+
+.notes-copy p,
+.notes-intro,
+.idea-item p,
+.source-note p,
+.reading-list li,
+.next-note-block p {
+  margin: 1rem 0 0;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.idea-list,
+.source-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.idea-item,
+.source-note {
+  padding: 1.1rem 0 0;
+}
+
+.source-author {
+  margin: 0 0 0.6rem;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.88;
+  color: #887d88;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.tag-row span {
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(209, 199, 209, 0.18);
+  color: #7a6e7a;
+  font-family: "Libre Bodoni", serif;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.source-note a,
+.reading-list a {
+  color: #7b6f7b;
+  font-family: "Libre Bodoni", serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.reading-list {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reading-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(160, 146, 160, 0.14);
+}
+
+.reading-list li:last-child {
+  border-bottom: 0;
+}
+
+.reading-list span {
+  opacity: 0.88;
+}
+
+.next-note-block {
+  margin-bottom: 3rem;
+}
+
+.notes-page .section-label {
+  color: #8c808c;
+  font-size: 15px;
+}
+
+.notes-page .idea-item h2,
+.notes-page .source-note h2,
+.notes-page .next-note-block h2 {
+  font-size: 27px;
+  line-height: 1.15;
+}
+
+@keyframes memory-shimmer {
+  0% {
+    letter-spacing: 0;
+    text-shadow:
+      0 0 8px rgba(209, 199, 209, 0.08),
+      0 0 18px rgba(209, 199, 209, 0.05);
+  }
+
+  50% {
+    letter-spacing: 0.01em;
+    text-shadow:
+      0 0 12px rgba(209, 199, 209, 0.16),
+      0 0 28px rgba(209, 199, 209, 0.09);
+  }
+
+  100% {
+    letter-spacing: 0.005em;
+    text-shadow:
+      0 0 10px rgba(209, 199, 209, 0.12),
+      0 0 22px rgba(209, 199, 209, 0.07);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-title,
+  .site-subtitle {
+    animation: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-nav {
+    gap: 1rem;
+    font-size: 14px;
+  }
+
+  .overlay {
+    width: min(100vw - 1.5rem, 720px);
+  }
+
+  .site-title {
+    font-size: 42px;
+  }
+
+  .site-subtitle {
+    font-size: 24px;
+  }
+
+  .section-card {
+    padding: 1.8rem 1.35rem;
+  }
+
+  .section-card p {
+    font-size: 20px;
+  }
+
+  .notes-shell {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .notes-hero,
+  .notes-block {
+    padding: 1.5rem;
+  }
+
+  .notes-subtitle,
+  .notes-meta,
+  .notes-copy p,
+  .notes-intro,
+  .idea-item p,
+  .source-note p,
+  .reading-list li,
+  .next-note-block p {
+    font-size: 17px;
+  }
 }

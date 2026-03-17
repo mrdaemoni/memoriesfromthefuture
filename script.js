@@ -3,6 +3,9 @@ const canvas = document.getElementById("background-canvas");
 if (canvas) {
   const context = canvas.getContext("2d");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const titleBlock = document.querySelector(".title-block");
+  const siteTitle = document.querySelector(".site-title");
+  const siteSubtitle = document.querySelector(".site-subtitle");
 
   let animationFrameId = 0;
   let width = 0;
@@ -306,8 +309,49 @@ if (canvas) {
     }
   };
 
+  const updateTitleMemory = () => {
+    if (!titleBlock || !siteTitle || !siteSubtitle) {
+      return;
+    }
+
+    const titleRect = siteTitle.getBoundingClientRect();
+    const subtitleRect = siteSubtitle.getBoundingClientRect();
+    const titleCenterX = titleRect.left + titleRect.width / 2;
+    const titleCenterY = titleRect.top + titleRect.height / 2;
+    const subtitleCenterX = subtitleRect.left + subtitleRect.width / 2;
+    const subtitleCenterY = subtitleRect.top + subtitleRect.height / 2;
+    const titleField = sampleField(titleCenterX, titleCenterY);
+    const subtitleField = sampleField(
+      subtitleCenterX,
+      subtitleCenterY
+    );
+    const titleLeftField = sampleField(titleRect.left, titleCenterY);
+    const titleRightField = sampleField(titleRect.right, titleCenterY);
+    const titleTopField = sampleField(titleCenterX, titleRect.top);
+    const titleBottomField = sampleField(titleCenterX, titleRect.bottom);
+
+    const edgePresence =
+      Math.abs(titleRightField - titleLeftField) * 0.32 +
+      Math.abs(titleBottomField - titleTopField) * 0.28;
+
+    const driftX = Math.max(-1.2, Math.min(1.2, titleField * 0.22));
+    const driftY = Math.max(-0.8, Math.min(0.8, subtitleField * 0.16));
+    const blur = prefersReducedMotion.matches
+      ? 0
+      : Math.max(0, Math.abs(titleField) * 0.16 + edgePresence * 0.95 - 0.05);
+    const opacity = 0.84 + Math.max(0, 0.12 - Math.abs(subtitleField) * 0.018);
+    const edgeGlow = Math.min(0.28, 0.12 + edgePresence * 0.12);
+
+    titleBlock.style.setProperty("--memory-shift-x", `${driftX}px`);
+    titleBlock.style.setProperty("--memory-shift-y", `${driftY}px`);
+    titleBlock.style.setProperty("--memory-blur", `${blur.toFixed(2)}px`);
+    titleBlock.style.setProperty("--memory-opacity", opacity.toFixed(3));
+    titleBlock.style.setProperty("--memory-edge-glow", edgeGlow.toFixed(3));
+  };
+
   const render = () => {
     drawContours();
+    updateTitleMemory();
 
     if (!prefersReducedMotion.matches) {
       time += 16;
