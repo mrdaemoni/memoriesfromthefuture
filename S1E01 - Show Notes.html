@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S1E01: Still Carving Bones — Show Notes | Memories from My Future Self</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --bg: #FEFBF6;
+            --text: #2C1810;
+            --text-secondary: #5D4037;
+            --text-muted: #8B7B6B;
+            --accent: #A0522D;
+            --accent-light: #D4A574;
+            --border: #E8DDD0;
+            --card-bg: #FFF9F0;
+            --tag-bg: #F5EDE3;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* Header */
+        .podcast-header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+        .podcast-name {
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .episode-title {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+        .episode-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            font-style: italic;
+            font-weight: 300;
+        }
+        .episode-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 16px;
+        }
+
+        /* Sections */
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 48px 0 16px;
+            color: var(--text);
+        }
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin: 32px 0 12px;
+            color: var(--text-secondary);
+        }
+        p {
+            margin-bottom: 16px;
+            font-size: 17px;
+        }
+
+        /* Provocation */
+        .provocation {
+            background: var(--card-bg);
+            border-left: 3px solid var(--accent);
+            padding: 24px 28px;
+            margin: 40px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .provocation p {
+            font-style: italic;
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        /* Source cards */
+        .source-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+        }
+        .source-card .author {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .source-card .title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .source-card .description {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .source-card .link {
+            display: inline-block;
+            margin-top: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-light);
+        }
+        .source-card .link:hover {
+            color: var(--text);
+            border-color: var(--text);
+        }
+
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            background: var(--tag-bg);
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        /* Reading list */
+        .reading-list {
+            list-style: none;
+            padding: 0;
+        }
+        .reading-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 16px;
+        }
+        .reading-list li:last-child { border-bottom: none; }
+        .reading-list .book-title { font-style: italic; }
+        .reading-list .year {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .reading-list a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-light);
+        }
+        .reading-list a:hover {
+            color: var(--text);
+            border-color: var(--text);
+        }
+
+        /* Key ideas */
+        .key-idea {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .key-idea:last-child { border-bottom: none; }
+        .key-idea strong {
+            color: var(--text);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 48px;
+            border-top: 1px solid var(--border);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Next episode teaser */
+        .next-episode {
+            background: var(--text);
+            color: var(--bg);
+            padding: 24px 28px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .next-episode .label {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.6;
+            margin-bottom: 8px;
+        }
+        .next-episode .title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .next-episode .teaser {
+            font-size: 15px;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="podcast-header">
+        <div class="podcast-name">Memories from My Future Self</div>
+        <h1 class="episode-title">Still Carving Bones</h1>
+        <div class="episode-subtitle">Season 1, Episode 1 — Learning to See</div>
+        <div class="episode-meta">Everything I wish I'd known sooner</div>
+    </header>
+
+    <div class="provocation">
+        <p>"You've spent your whole life building the ability to measure. To count. To track. To prove. And it's served you. But 'here' is the first rung. What if the thing you can't prove is the thing that matters most?"</p>
+    </div>
+
+    <h2>What This Episode Is About</h2>
+    <p>Two voices argue over a question you carry every day without naming it: is what you're measuring actually what matters? One voice defends measurement — the shared language of progress that built the modern world. The other voice says measurement is just the first rung of a ladder that goes much higher — from data to pattern to principle to wisdom to something we can barely name.</p>
+    <p>Through three moments the listener will recognize from their own life — the room you walk into and <em>know</em>, the mentor who changed your perception, the late night when something clicks — the episode builds toward a provocation about the knowledge that precedes thought.</p>
+
+    <h2>Key Ideas</h2>
+
+    <div class="key-idea">
+        <strong>The Abstraction Ladder</strong> — Counting began forty thousand years ago as tally marks on bone. Marks became numerals, numerals became arithmetic, arithmetic became algebra, algebra became calculus. Each rung reveals what the one below can't see. Most of us are still on the first few rungs — we just use fancier tools.
+    </div>
+    <div class="key-idea">
+        <strong>Goodhart's Law</strong> — "When a measure becomes a target, it ceases to be a good measure." The moment you optimize for the metric, you lose sight of the thing the metric was measuring. This isn't just economics — it's a law of perception.
+    </div>
+    <div class="key-idea">
+        <strong>Quality as Primary Reality</strong> — Robert Pirsig's radical claim: value is not a property of things — things are a property of value. Quality doesn't sit on top of reality. Quality IS reality. Subjects, objects, and measurements all come after.
+    </div>
+    <div class="key-idea">
+        <strong>Tacit Knowing</strong> — Michael Polanyi: "We can know more than we can tell." Every act of explicit knowing rests on a tacit foundation. The cyclist's body knows balance without knowing physics. The master chef's hands know without the recipe. You don't skip the rungs — you internalize them until you don't need to look down.
+    </div>
+    <div class="key-idea">
+        <strong>The Quality Without a Name</strong> — Christopher Alexander: "There is a central quality which is the root criterion of life and spirit in a man, a town, a building, or a wilderness. This quality is objective and precise, but it cannot be named." Rigorous — yet beyond measurement.
+    </div>
+    <div class="key-idea">
+        <strong>Intelligence ≠ Wisdom</strong> — John Vervaeke showed that IQ and rationality correlate at only 0.3. His four levels: inferences → rational → reasonable → wise. Most measurement captures the first. Wisdom is the fourth. You can't get there by measuring harder.
+    </div>
+
+    <h2>Sources from MrHector's Vault</h2>
+    <p>This episode draws from a knowledge vault of 600+ notes across 8 clusters, built over years of deep reading and synthesis.</p>
+
+    <div class="source-card">
+        <div class="author">Robert M. Pirsig</div>
+        <div class="title">Zen and the Art of Motorcycle Maintenance · On Quality · Lila</div>
+        <div class="description">249 notes across three books — the deepest philosophical anchor in the vault. Pirsig's Metaphysics of Quality argues that value precedes and creates the subject/object distinction, not the reverse.</div>
+        <div class="tags">
+            <span class="tag">#theme/quality</span>
+            <span class="tag">#theme/measurement</span>
+            <span class="tag">#theme/mastery</span>
+        </div>
+        <a class="link" href="https://en.wikipedia.org/wiki/Zen_and_the_Art_of_Motorcycle_Maintenance" target="_blank">Learn more →</a>
+    </div>
+
+    <div class="source-card">
+        <div class="author">John Vervaeke</div>
+        <div class="title">Awakening from the Meaning Crisis</div>
+        <div class="description">28 concept notes from the 50-episode lecture series. Relevance Realization: the pre-cognitive engine that zeros in on what matters before conscious thought. The Four Kinds of Knowing: propositional → procedural → perspectival → participatory.</div>
+        <div class="tags">
+            <span class="tag">#theme/knowing</span>
+            <span class="tag">#theme/quality</span>
+        </div>
+        <a class="link" href="https://www.youtube.com/playlist?list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ" target="_blank">Watch the full series →</a>
+    </div>
+
+    <div class="source-card">
+        <div class="author">MrHector — Original Essay</div>
+        <div class="title">"From Measurement to Meaning"</div>
+        <div class="description">The essay that inspired this episode. Traces the evolution of counting — from tally marks to calculus — as a metaphor for personal growth: data points → patterns → principles → wisdom → intuition. The abstraction ladder.</div>
+        <div class="tags">
+            <span class="tag">#theme/measurement</span>
+            <span class="tag">#theme/quality</span>
+        </div>
+    </div>
+
+    <h2>Deep Research — Thinkers Beyond the Vault</h2>
+
+    <div class="source-card">
+        <div class="author">Michael Polanyi</div>
+        <div class="title">The Tacit Dimension (1966) · Personal Knowledge (1958)</div>
+        <div class="description">"We can know more than we can tell." Polanyi — a physical chemist turned philosopher — made the definitive case that all explicit knowledge rests on tacit foundations. The from-to structure: we attend <em>from</em> subsidiary clues <em>to</em> focal meaning. The cyclist doesn't know the physics of balance — yet the body knows. Every act of knowing involves the passionate contribution of the knower.</div>
+        <a class="link" href="https://press.uchicago.edu/ucp/books/book/chicago/T/bo6035368.html" target="_blank">The Tacit Dimension — U. of Chicago Press →</a>
+    </div>
+
+    <div class="source-card">
+        <div class="author">Christopher Alexander</div>
+        <div class="title">The Timeless Way of Building (1979) · A Pattern Language (1977)</div>
+        <div class="description">"There is a central quality which is the root criterion of life and spirit in a man, a town, a building, or a wilderness. This quality is objective and precise, but it cannot be named." Alexander spent his life studying why some buildings feel alive and others feel dead. His 253 patterns are generative — they produce living spaces at any scale. He explicitly connected his work to Pirsig's: both argue Quality is the foundational primitive.</div>
+        <a class="link" href="https://en.wikipedia.org/wiki/The_Timeless_Way_of_Building" target="_blank">The Timeless Way — Wikipedia →</a>
+    </div>
+
+    <h2>Mentioned In Passing</h2>
+
+    <div class="source-card">
+        <div class="author">Peter Drucker</div>
+        <div class="title">The Effective Executive (1967)</div>
+        <div class="description">"What gets measured gets managed." Drucker's dictum on the power — and the danger — of measurement in organizations. Often cited, rarely completed: the full implication is that managing by measurement alone distorts what you're trying to improve.</div>
+        <a class="link" href="https://www.amazon.com/Effective-Executive-Definitive-Harperbusiness-Essentials/dp/0060833459" target="_blank">Amazon →</a>
+    </div>
+
+    <div class="source-card">
+        <div class="author">James Clear</div>
+        <div class="title">Atomic Habits (2018)</div>
+        <div class="description">The 1% improvement philosophy. Track your habits, make them visible, make them countable, watch them compound. This episode doesn't argue against Clear — it argues that his system is the first rung, not the last.</div>
+        <a class="link" href="https://jamesclear.com/atomic-habits" target="_blank">jamesclear.com →</a>
+    </div>
+
+    <div class="source-card">
+        <div class="author">Charles Goodhart</div>
+        <div class="title">Goodhart's Law (1975)</div>
+        <div class="description">"When a measure becomes a target, it ceases to be a good measure." Originally formulated in monetary policy, now recognized as a universal principle of incentive design, organizational behavior, and personal development.</div>
+        <a class="link" href="https://en.wikipedia.org/wiki/Goodhart%27s_law" target="_blank">Wikipedia →</a>
+    </div>
+
+    <h2>Full Reading List</h2>
+    <ul class="reading-list">
+        <li>Pirsig, Robert M. <span class="book-title">Zen and the Art of Motorcycle Maintenance</span> <span class="year">(1974)</span> — <a href="https://www.amazon.com/Zen-Art-Motorcycle-Maintenance-Inquiry/dp/0060839872" target="_blank">Amazon</a></li>
+        <li>Pirsig, Robert M. <span class="book-title">Lila: An Inquiry into Morals</span> <span class="year">(1991)</span> — <a href="https://www.amazon.com/Lila-Inquiry-Morals-Robert-Pirsig/dp/0553299611" target="_blank">Amazon</a></li>
+        <li>Pirsig, Robert M. <span class="book-title">On Quality</span> <span class="year">(2022, posthumous)</span> — <a href="https://www.amazon.com/Quality-Robert-M-Pirsig/dp/0063084678" target="_blank">Amazon</a></li>
+        <li>Polanyi, Michael. <span class="book-title">The Tacit Dimension</span> <span class="year">(1966)</span> — <a href="https://press.uchicago.edu/ucp/books/book/chicago/T/bo6035368.html" target="_blank">U. of Chicago Press</a></li>
+        <li>Polanyi, Michael. <span class="book-title">Personal Knowledge: Towards a Post-Critical Philosophy</span> <span class="year">(1958)</span> — <a href="https://press.uchicago.edu/ucp/books/book/chicago/P/bo19722848.html" target="_blank">U. of Chicago Press</a></li>
+        <li>Alexander, Christopher. <span class="book-title">The Timeless Way of Building</span> <span class="year">(1979)</span> — <a href="https://www.amazon.com/Timeless-Way-Building-Christopher-Alexander/dp/0195024028" target="_blank">Amazon</a></li>
+        <li>Alexander, Christopher et al. <span class="book-title">A Pattern Language</span> <span class="year">(1977)</span> — <a href="https://www.amazon.com/Pattern-Language-Buildings-Construction-Environmental/dp/0195019199" target="_blank">Amazon</a></li>
+        <li>Vervaeke, John. <span class="book-title">Awakening from the Meaning Crisis</span> <span class="year">(2019)</span> — <a href="https://www.youtube.com/playlist?list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ" target="_blank">YouTube (50 lectures)</a></li>
+        <li>Drucker, Peter. <span class="book-title">The Effective Executive</span> <span class="year">(1967)</span> — <a href="https://www.amazon.com/Effective-Executive-Definitive-Harperbusiness-Essentials/dp/0060833459" target="_blank">Amazon</a></li>
+        <li>Clear, James. <span class="book-title">Atomic Habits</span> <span class="year">(2018)</span> — <a href="https://jamesclear.com/atomic-habits" target="_blank">jamesclear.com</a></li>
+    </ul>
+
+    <h2>Continue the Journey</h2>
+
+    <div class="next-episode">
+        <div class="label">Next Episode</div>
+        <div class="title">S1E02: "The Water We Swim In"</div>
+        <div class="teaser">What if the reason you can't see quality isn't that it's hidden — but that your way of looking is broken?</div>
+    </div>
+
+    <footer class="footer">
+        <p><strong>Memories from My Future Self</strong> — Everything I wish I'd known sooner</p>
+        <p style="margin-top: 8px;">Full season notes and reading lists at <a href="https://fromfutureself.com">fromfutureself.com</a></p>
+        <p style="margin-top: 16px; font-size: 12px;">Based on MrHector's knowledge vault — 600+ notes, 93 authors, 100+ books, 8 knowledge clusters.<br>Built with care. No shortcuts.</p>
+    </footer>
+
+</body>
+</html>

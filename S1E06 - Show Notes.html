@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attention Changes the World - Memories from My Future Self</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #FEFBF6;
+            --text: #2C1810;
+            --accent: #A0522D;
+            --muted: #8B7355;
+            --card-bg: #FAF6F0;
+            --border: #E8DDD0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Source Serif 4', serif;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .podcast-header {
+            margin-bottom: 48px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 32px;
+        }
+
+        .episode-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .episode-title {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .season-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .provocation {
+            background-color: var(--card-bg);
+            border-left: 5px solid var(--accent);
+            padding: 24px;
+            margin-bottom: 48px;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .provocation-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: 48px;
+            margin-bottom: 24px;
+        }
+
+        .episode-summary {
+            margin-bottom: 48px;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .episode-summary p {
+            margin-bottom: 16px;
+        }
+
+        .episode-summary p:last-child {
+            margin-bottom: 0;
+        }
+
+        .key-ideas {
+            margin-bottom: 48px;
+        }
+
+        .ideas-grid {
+            display: grid;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .idea-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .idea-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .idea-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .sources {
+            margin-bottom: 48px;
+        }
+
+        .source-section {
+            margin-bottom: 32px;
+        }
+
+        .source-section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--muted);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .source-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+
+        .source-card .author {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .source-card .title {
+            font-style: italic;
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .source-card .description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .source-card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            background-color: rgba(160, 82, 45, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        .reading-list {
+            margin-bottom: 48px;
+        }
+
+        .reading-list ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .reading-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .reading-list li:last-child {
+            border-bottom: none;
+        }
+
+        .next-episode {
+            background: linear-gradient(135deg, var(--text) 0%, var(--muted) 100%);
+            color: var(--bg);
+            padding: 32px;
+            border-radius: 4px;
+            margin-bottom: 48px;
+        }
+
+        .next-episode h3 {
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .next-episode p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 2px solid var(--border);
+            color: var(--muted);
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer p {
+            margin-bottom: 8px;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 32px 16px;
+            }
+
+            .episode-title {
+                font-size: 32px;
+            }
+
+            .ideas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="podcast-header">
+            <div class="episode-number">Season 1, Episode 6</div>
+            <h1 class="episode-title">Attention Changes the World</h1>
+            <div class="season-name">Learning to See</div>
+        </div>
+
+        <!-- Provocation -->
+        <div class="provocation">
+            <span class="provocation-label">The Provocation</span>
+            <p>Attention changes the world. It literally reconstitutes reality. Makes one world visible, leaves another invisible. What if you're only seeing half? What if the way you attend determines what you find?</p>
+        </div>
+
+        <!-- Summary -->
+        <section class="episode-summary">
+            <h2 class="section-title">Episode Summary</h2>
+            <p>This episode reveals that attention is not passive observation—it's constitutive. How you attend changes what you find. McGilchrist's groundbreaking neuroscience shows that the two hemispheres of the brain attend to the world differently, revealing different realities. The left hemisphere is narrow, grasping, analytical—taking things apart. The right hemisphere is broad, relational, receptive—holding wholes. Both are essential, but our civilization has become dangerously imbalanced toward left-hemisphere dominance.</p>
+            <p>Through Bortoft's "going upstream" practice—attending to your attending rather than to objects—the episode provides a method for accessing right-hemisphere knowing. Three moments demonstrate the difference: a photograph revealed differently through two modes of attention, a conversation transformed by receptive presence, and MrHector's work at Amazon holding the tension between left-hemisphere metrics and right-hemisphere values. The practice: intentionally shift attention modes, noticing how the same object becomes a different presence.</p>
+        </section>
+
+        <!-- Key Ideas -->
+        <section class="key-ideas">
+            <h2 class="section-title">Key Ideas</h2>
+            <div class="ideas-grid">
+                <div class="idea-card">
+                    <h4>Two Hemispheres, Two Worlds</h4>
+                    <p>Left: narrow, grasping, analytical, categorical. Right: broad, receptive, relational, whole. Each attends to reality differently and reveals a different world. We've optimized for left-hemisphere knowing and lost the right.</p>
+                </div>
+                <div class="idea-card">
+                    <h4>The Emissary Usurped the Master</h4>
+                    <p>McGilchrist's phrase: the left hemisphere has become dominant, believing it is the whole story. It was meant to serve the right hemisphere's holistic knowing. Instead, it's captured us in a world of reduction and measurement.</p>
+                </div>
+                <div class="idea-card">
+                    <h4>Going Upstream</h4>
+                    <p>Bortoft's practice: shift attention from what you're experiencing to the experience of experiencing it. From the tree to the act of perceiving the tree. This shift unlocks right-hemisphere knowing without abandoning analysis.</p>
+                </div>
+                <div class="idea-card">
+                    <h4>Integration as the Goal</h4>
+                    <p>Not oscillation between modes. Not choosing one. True mastery integrates both—the analytical sharpness AND the receptive openness. Analysis in service of the whole, not in place of it.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sources -->
+        <section class="sources">
+            <h2 class="section-title">Sources & Thinkers</h2>
+
+            <div class="source-section">
+                <div class="source-section-title">From the Vault</div>
+
+                <div class="source-card">
+                    <div class="author">Iain McGilchrist</div>
+                    <div class="title">The Master and His Emissary, The Matter with Things</div>
+                    <div class="description">The definitive neuroscience of how the two hemispheres attend to reality differently. How left-hemisphere dominance has created a civilization of reduction. The path toward rebalancing.</div>
+                    <div class="tags">
+                        <span class="tag">Neuroscience</span>
+                        <span class="tag">Hemispheres</span>
+                        <span class="tag">Attention</span>
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <div class="author">Henri Bortoft</div>
+                    <div class="title">The Wholeness of Nature</div>
+                    <div class="description">"Going upstream"—the Goethean method of attending to your attending rather than to objects. How to access holistic knowing without abandoning rigor. The practice of perception transformation.</div>
+                    <div class="tags">
+                        <span class="tag">Goethe</span>
+                        <span class="tag">Upstream</span>
+                        <span class="tag">Wholeness</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="source-section">
+                <div class="source-section-title">Deep Research</div>
+
+                <div class="source-card">
+                    <div class="author">Iain McGilchrist</div>
+                    <div class="title">Lecture Series & Interviews</div>
+                    <div class="description">McGilchrist's detailed exploration of how the two hemispheres create different worlds. Why left-hemisphere dominance is pathological. How rebalancing is possible.</div>
+                    <div class="tags">
+                        <span class="tag">Neuroscience</span>
+                        <span class="tag">Pathology</span>
+                        <span class="tag">Culture</span>
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <div class="author">Johann Wolfgang von Goethe</div>
+                    <div class="title">Scientific Writings & Method</div>
+                    <div class="description">The original methodology of patient, receptive observation. Attending to nature as a living whole. The foundation of Bortoft's "going upstream" practice.</div>
+                    <div class="tags">
+                        <span class="tag">Goethe</span>
+                        <span class="tag">Method</span>
+                        <span class="tag">Nature</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reading List -->
+        <section class="reading-list">
+            <h2 class="section-title">Complete Reading List</h2>
+            <ul>
+                <li>McGilchrist, Iain. <em>The Master and His Emissary</em> (2009)</li>
+                <li>McGilchrist, Iain. <em>The Matter with Things</em> (2021)</li>
+                <li>Bortoft, Henri. <em>The Wholeness of Nature</em> (1996)</li>
+                <li>Goethe, Johann Wolfgang von. <em>Scientific Writings</em> (Various)</li>
+            </ul>
+        </section>
+
+        <!-- Next Episode -->
+        <div class="next-episode">
+            <h3>Next Episode</h3>
+            <p>Knowing Before Knowing — the knowledge that precedes thought itself. The wisdom that arrives before the mind catches up. Seven episodes, one ladder. The view from the top.</p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p><strong>Memories from My Future Self</strong></p>
+            <p>Everything I Wish I'd Known Sooner</p>
+            <p><a href="https://fromfutureself.com">fromfutureself.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>

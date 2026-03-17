@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Discipline of Attention - Memories from My Future Self</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #FEFBF6;
+            --text: #2C1810;
+            --accent: #A0522D;
+            --muted: #8B7355;
+            --card-bg: #FAF6F0;
+            --border: #E8DDD0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Source Serif 4', serif;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .podcast-header {
+            margin-bottom: 48px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 32px;
+        }
+
+        .episode-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .episode-title {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .season-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .provocation {
+            background-color: var(--card-bg);
+            border-left: 5px solid var(--accent);
+            padding: 24px;
+            margin-bottom: 48px;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .provocation-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: 48px;
+            margin-bottom: 24px;
+        }
+
+        .episode-summary {
+            margin-bottom: 48px;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .episode-summary p {
+            margin-bottom: 16px;
+        }
+
+        .episode-summary p:last-child {
+            margin-bottom: 0;
+        }
+
+        .key-ideas {
+            margin-bottom: 48px;
+        }
+
+        .ideas-grid {
+            display: grid;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .idea-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .idea-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .idea-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .sources {
+            margin-bottom: 48px;
+        }
+
+        .source-section {
+            margin-bottom: 32px;
+        }
+
+        .source-section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--muted);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .source-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+
+        .source-card .author {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .source-card .title {
+            font-style: italic;
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .source-card .description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .source-card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            background-color: rgba(160, 82, 45, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        .reading-list {
+            margin-bottom: 48px;
+        }
+
+        .reading-list ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .reading-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .reading-list li:last-child {
+            border-bottom: none;
+        }
+
+        .next-episode {
+            background: linear-gradient(135deg, var(--text) 0%, var(--muted) 100%);
+            color: var(--bg);
+            padding: 32px;
+            border-radius: 4px;
+            margin-bottom: 48px;
+        }
+
+        .next-episode h3 {
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .next-episode p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 2px solid var(--border);
+            color: var(--muted);
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer p {
+            margin-bottom: 8px;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 32px 16px;
+            }
+
+            .episode-title {
+                font-size: 32px;
+            }
+
+            .ideas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="podcast-header">
+            <div class="episode-number">Season 1, Episode 3</div>
+            <h1 class="episode-title">The Discipline of Attention</h1>
+            <div class="season-name">Learning to See</div>
+        </div>
+
+        <!-- Provocation -->
+        <div class="provocation">
+            <span class="provocation-label">The Provocation</span>
+            <p>What have you been looking at but not actually attending to? And what would change in your work, your relationships, your life — if you started? Not as a big existential shift. Just Monday morning. One conversation. One space.</p>
+        </div>
+
+        <!-- Summary -->
+        <section class="episode-summary">
+            <h2 class="section-title">Episode Summary</h2>
+            <p>This episode transforms attention from a passive capacity into an active discipline. The core insight from Iris Murdoch is revolutionary: taste is not a gift—it's the accumulated result of ten thousand acts of attention. The episode walks through the architecture of how seeing is trained, using Polanyi's concept of subsidiary awareness, Pirsig's "optimal grip," and the methodology that masters use to develop perception.</p>
+            <p>Three moments—the glance that reveals wholeness, the hands that know through cooking, and the conversation where you finally listen—demonstrate that expertise is always the result of deliberate attention. The episode provides concrete practices for training perception: looking before analyzing in design reviews, attending fully in conversation, and developing quality perception through patient observation of spaces and objects.</p>
+        </section>
+
+        <!-- Key Ideas -->
+        <section class="key-ideas">
+            <h2 class="section-title">Key Ideas</h2>
+            <div class="ideas-grid">
+                <div class="idea-card">
+                    <h4>Taste as Trained Perception</h4>
+                    <p>Good taste is a skill that can be learned but cannot be taught. You develop it through a thousand acts of deliberate attention, until your nervous system recognizes patterns faster than conscious thought.</p>
+                </div>
+                <div class="idea-card">
+                    <h4>Subsidiary vs. Focal Awareness</h4>
+                    <p>Polanyi's crucial distinction: we attend *through* subsidiary details to focal awareness. The color and smell of the food matter, but we attend through them to the whole—the rightness of the dish.</p>
+                </div>
+                <div class="idea-card">
+                    <h4>Just and Loving Attention</h4>
+                    <p>Murdoch's foundation for morality and perception: attention directed upon an individual reality without the filter of self. Getting yourself out of the way so what you're observing can actually be seen as it is.</p>
+                </div>
+                <div class="idea-card">
+                    <h4>The Optimal Grip</h4>
+                    <p>Pirsig's principle: attention requires right pressure—not too tight, not too loose. There's a place where presence settles, where you're engaged but not straining. That's where real seeing happens.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sources -->
+        <section class="sources">
+            <h2 class="section-title">Sources & Thinkers</h2>
+
+            <div class="source-section">
+                <div class="source-section-title">From the Vault</div>
+
+                <div class="source-card">
+                    <div class="author">Iris Murdoch</div>
+                    <div class="title">The Sovereignty of Good</div>
+                    <div class="description">"Just and loving attention directed upon an individual reality." The foundation of seeing truly. Attention is not a skill you add on—it's the moral act itself. The ability to perceive without the filter of self.</div>
+                    <div class="tags">
+                        <span class="tag">Attention</span>
+                        <span class="tag">Morality</span>
+                        <span class="tag">Love</span>
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <div class="author">Michael Polanyi</div>
+                    <div class="title">The Tacit Dimension</div>
+                    <div class="description">Subsidiary awareness and focal awareness—attending through details to the whole. The structure of all skilled perception. How expertise compresses knowledge into invisible knowing.</div>
+                    <div class="tags">
+                        <span class="tag">Subsidiary</span>
+                        <span class="tag">Focal</span>
+                        <span class="tag">Attention</span>
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <div class="author">Robert M. Pirsig</div>
+                    <div class="title">Zen and the Art of Motorcycle Maintenance</div>
+                    <div class="description">The "optimal grip"—the balance between tight focus and loose relaxation where real attention settles. The principle that applies to all perception and all mastery.</div>
+                    <div class="tags">
+                        <span class="tag">Grip</span>
+                        <span class="tag">Focus</span>
+                        <span class="tag">Balance</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="source-section">
+                <div class="source-section-title">Deep Research</div>
+
+                <div class="source-card">
+                    <div class="author">K. Anders Ericsson</div>
+                    <div class="title">Peak: Secrets from the New Science of Expertise</div>
+                    <div class="description">The science of deliberate practice: well-defined goals, full concentration, immediate feedback, operating at the edge. How attention becomes mastery.</div>
+                    <div class="tags">
+                        <span class="tag">Deliberate Practice</span>
+                        <span class="tag">Expertise</span>
+                        <span class="tag">Skill</span>
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <div class="author">Christopher Alexander</div>
+                    <div class="title">The Timeless Way of Building</div>
+                    <div class="description">How to perceive the quality of spaces through patient attention. The method of learning to see what makes places alive.</div>
+                    <div class="tags">
+                        <span class="tag">Space</span>
+                        <span class="tag">Quality</span>
+                        <span class="tag">Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reading List -->
+        <section class="reading-list">
+            <h2 class="section-title">Complete Reading List</h2>
+            <ul>
+                <li>Murdoch, Iris. <em>The Sovereignty of Good</em> (1970)</li>
+                <li>Polanyi, Michael. <em>The Tacit Dimension</em> (1966)</li>
+                <li>Pirsig, Robert M. <em>Zen and the Art of Motorcycle Maintenance</em> (1974)</li>
+                <li>Ericsson, K. Anders. <em>Peak: Secrets from the New Science of Expertise</em> (2016)</li>
+                <li>Alexander, Christopher. <em>The Timeless Way of Building</em> (1979)</li>
+            </ul>
+        </section>
+
+        <!-- Next Episode -->
+        <div class="next-episode">
+            <h3>Next Episode</h3>
+            <p>The Metric Trap — when you're trying to improve something unmeasurable, the urge to create a metric is almost irresistible. How Instagram turned attention into engagement. How schools turned learning into test scores. What happens when the metric becomes the goal.</p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p><strong>Memories from My Future Self</strong></p>
+            <p>Everything I Wish I'd Known Sooner</p>
+            <p><a href="https://fromfutureself.com">fromfutureself.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>

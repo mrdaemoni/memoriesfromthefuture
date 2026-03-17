@@ -1,4 +1,5 @@
 const canvas = document.getElementById("background-canvas");
+const notesRoot = document.querySelector("[data-notes-root]");
 
 if (canvas) {
   const context = canvas.getContext("2d");
@@ -373,4 +374,28 @@ if (canvas) {
     window.cancelAnimationFrame(animationFrameId);
     render();
   });
+}
+
+if (notesRoot) {
+  const searchParams = new URLSearchParams(window.location.search);
+  const episode = searchParams.get("episode") || "01";
+  const notesData = window.NOTES_DATA || {};
+  const bodyContent = notesData[episode] || notesData["01"];
+  const episodeLinks = document.querySelectorAll("[data-episode-link]");
+
+  episodeLinks.forEach((link) => {
+    if (link.getAttribute("data-episode-link") === episode) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+
+  if (bodyContent) {
+    notesRoot.innerHTML = bodyContent;
+    window.scrollTo(0, 0);
+  } else {
+    notesRoot.innerHTML =
+      '<div class="notes-loading">These show notes are not available yet.</div>';
+  }
 }

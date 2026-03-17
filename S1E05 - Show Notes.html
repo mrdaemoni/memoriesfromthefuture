@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers to Leave Numbers - Memories from My Future Self</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #FEFBF6;
+            --text: #2C1810;
+            --accent: #A0522D;
+            --muted: #8B7355;
+            --card-bg: #FAF6F0;
+            --border: #E8DDD0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Source Serif 4', serif;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .podcast-header {
+            margin-bottom: 48px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 32px;
+        }
+
+        .episode-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .episode-title {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .season-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .provocation {
+            background-color: var(--card-bg);
+            border-left: 5px solid var(--accent);
+            padding: 24px;
+            margin-bottom: 48px;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .provocation-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: 48px;
+            margin-bottom: 24px;
+        }
+
+        .episode-summary {
+            margin-bottom: 48px;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .episode-summary p {
+            margin-bottom: 16px;
+        }
+
+        .episode-summary p:last-child {
+            margin-bottom: 0;
+        }
+
+        .key-ideas {
+            margin-bottom: 48px;
+        }
+
+        .ideas-grid {
+            display: grid;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .idea-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .idea-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .idea-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .sources {
+            margin-bottom: 48px;
+        }
+
+        .source-section {
+            margin-bottom: 32px;
+        }
+
+        .source-section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--muted);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .source-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+
+        .source-card .author {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .source-card .title {
+            font-style: italic;
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .source-card .description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .source-card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            background-color: rgba(160, 82, 45, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        .reading-list {
+            margin-bottom: 48px;
+        }
+
+        .reading-list ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .reading-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .reading-list li:last-child {
+            border-bottom: none;
+        }
+
+        .next-episode {
+            background: linear-gradient(135deg, var(--text) 0%, var(--muted) 100%);
+            color: var(--bg);
+            padding: 32px;
+            border-radius: 4px;
+            margin-bottom: 48px;
+        }
+
+        .next-episode h3 {
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .next-episode p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 2px solid var(--border);
+            color: var(--muted);
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer p {
+            margin-bottom: 8px;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 32px 16px;
+            }
+
+            .episode-title {
+                font-size: 32px;
+            }
+
+            .ideas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="podcast-header">
+            <div class="episode-number">Season 1, Episode 5</div>
+            <h1 class="episode-title">Numbers to Leave Numbers</h1>
+            <div class="season-name">Learning to See</div>
+        </div>
+
+        <!-- Provocation -->
+        <div class="provocation">
+            <span class="provocation-label">The Provocation</span>
+            <p>What scaffolding are you clinging to that's actually keeping you from the next level? Are you still in the learning phase? Or are you in the clinging phase? Because they feel almost exactly the same.</p>
+        </div>
+
+        <!-- Summary -->
+        <section class="episode-summary">
+            <h2 class="section-title">Episode Summary</h2>
+            <p>This episode reveals the paradox at the heart of mastery: you need the numbers to leave the numbers. Waitzkin's principle—"numbers to leave numbers"—shows that the explicit forms, metrics, and frameworks are scaffolding. Their purpose is to become invisible. The episode walks through Vervaeke's four kinds of knowing, showing how expertise moves from propositional (facts) through procedural (skills) to perspectival (seeing wholes) and finally to participatory (embodied wisdom).</p>
+            <p>The episode demonstrates how mastery happens: through deliberate practice that eventually dissolves into flow. The moment when calculation becomes invisible and decisions flow without effort. Three moments—learning to drive, watching a master work, and the architect's intuition—show what it looks like when the form has gone underground. The practice for this week: find one skill where you're still conscious of the form, and practice letting go—trusting that the integrated knowledge will operate more reliably without conscious monitoring.</p>
+        </section>
+
+        <!-- Key Ideas -->
+        <section class="key-ideas">
+            <h2 class="section-title">Key Ideas</h2>
+            <div class="ideas-grid">
+                <div class="idea-card">
+                    <h4>Numbers to Leave Numbers</h4>
+                    <p>Waitzkin's principle: you learn the form to leave the form. The explicit becomes tacit. The conscious becomes unconscious. You climb the ladder only to forget it once it's internalized.</p>
+                </div>
+                <div class="idea-card">
+                    <h4>Four Kinds of Knowing</h4>
+                    <p>Propositional (facts), Procedural (skills), Perspectival (seeing whole), Participatory (embodied wisdom). Most organizations optimize level two. Mastery requires reaching level four—when knowing and being merge.</p>
+                </div>
+                <div class="idea-card">
+                    <h4>Investment in Loss</h4>
+                    <p>Waitzkin's term for the surrender required to let the scaffolding dissolve. You invest yourself so completely in learning that you lose the separate self monitoring. And then the knowledge operates more powerfully.</p>
+                </div>
+                <div class="idea-card">
+                    <h4>Deliberate Practice Architecture</h4>
+                    <p>Well-defined goals, full concentration, immediate feedback, operating at the edge. The four elements that transform practice into mastery—and that create the conditions for the form to eventually disappear.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sources -->
+        <section class="sources">
+            <h2 class="section-title">Sources & Thinkers</h2>
+
+            <div class="source-section">
+                <div class="source-section-title">From the Vault</div>
+
+                <div class="source-card">
+                    <div class="author">Josh Waitzkin</div>
+                    <div class="title">The Art of Learning</div>
+                    <div class="description">"Numbers to leave numbers"—the principle that form exists to become invisible. Waitzkin's own journey from chess prodigy to mastery in multiple domains, showing how the meta-process of learning works.</div>
+                    <div class="tags">
+                        <span class="tag">Mastery</span>
+                        <span class="tag">Learning</span>
+                        <span class="tag">Flow</span>
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <div class="author">John Vervaeke</div>
+                    <div class="title">Awakening from the Meaning Crisis</div>
+                    <div class="description">The four kinds of knowing mapped to the journey of mastery. How expertise transforms consciousness itself through integration.</div>
+                    <div class="tags">
+                        <span class="tag">Four Kinds</span>
+                        <span class="tag">Expertise</span>
+                        <span class="tag">Consciousness</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="source-section">
+                <div class="source-section-title">Deep Research</div>
+
+                <div class="source-card">
+                    <div class="author">K. Anders Ericsson</div>
+                    <div class="title">Peak: Secrets from the New Science of Expertise</div>
+                    <div class="description">The science of deliberate practice: well-defined goals, full concentration, immediate feedback, operating at the edge. The architecture that creates mastery and allows form to dissolve.</div>
+                    <div class="tags">
+                        <span class="tag">Deliberate Practice</span>
+                        <span class="tag">Expertise</span>
+                        <span class="tag">Science</span>
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <div class="author">B.K.S. Iyengar</div>
+                    <div class="title">Light on Life</div>
+                    <div class="description">Sixty years practicing the same yoga poses. How mastery reveals infinite depth. How the form becomes transparent to what moves through it.</div>
+                    <div class="tags">
+                        <span class="tag">Yoga</span>
+                        <span class="tag">Mastery</span>
+                        <span class="tag">Practice</span>
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <div class="author">Mihaly Csikszentmihalyi</div>
+                    <div class="title">Flow: The Psychology of Optimal Experience</div>
+                    <div class="description">The state where challenge and skill align. Where the self dissolves and action flows. Where expertise becomes experience.</div>
+                    <div class="tags">
+                        <span class="tag">Flow</span>
+                        <span class="tag">Psychology</span>
+                        <span class="tag">Experience</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reading List -->
+        <section class="reading-list">
+            <h2 class="section-title">Complete Reading List</h2>
+            <ul>
+                <li>Waitzkin, Josh. <em>The Art of Learning</em> (2007)</li>
+                <li>Vervaeke, John. <em>Awakening from the Meaning Crisis</em> (2019 Lecture Series)</li>
+                <li>Ericsson, K. Anders. <em>Peak: Secrets from the New Science of Expertise</em> (2016)</li>
+                <li>Iyengar, B.K.S. <em>Light on Life</em> (2005)</li>
+                <li>Csikszentmihalyi, Mihaly. <em>Flow: The Psychology of Optimal Experience</em> (1990)</li>
+            </ul>
+        </section>
+
+        <!-- Next Episode -->
+        <div class="next-episode">
+            <h3>Next Episode</h3>
+            <p>Attention Changes the World — what if the way you attend to reality determines what reality shows you? What if attention doesn't just receive—it shapes what's there?</p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p><strong>Memories from My Future Self</strong></p>
+            <p>Everything I Wish I'd Known Sooner</p>
+            <p><a href="https://fromfutureself.com">fromfutureself.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Metric Trap - Memories from My Future Self</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #FEFBF6;
+            --text: #2C1810;
+            --accent: #A0522D;
+            --muted: #8B7355;
+            --card-bg: #FAF6F0;
+            --border: #E8DDD0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Source Serif 4', serif;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .podcast-header {
+            margin-bottom: 48px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 32px;
+        }
+
+        .episode-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .episode-title {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .season-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .provocation {
+            background-color: var(--card-bg);
+            border-left: 5px solid var(--accent);
+            padding: 24px;
+            margin-bottom: 48px;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .provocation-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: 48px;
+            margin-bottom: 24px;
+        }
+
+        .episode-summary {
+            margin-bottom: 48px;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .episode-summary p {
+            margin-bottom: 16px;
+        }
+
+        .episode-summary p:last-child {
+            margin-bottom: 0;
+        }
+
+        .key-ideas {
+            margin-bottom: 48px;
+        }
+
+        .ideas-grid {
+            display: grid;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .idea-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .idea-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .idea-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .sources {
+            margin-bottom: 48px;
+        }
+
+        .source-section {
+            margin-bottom: 32px;
+        }
+
+        .source-section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--muted);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .source-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+
+        .source-card .author {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .source-card .title {
+            font-style: italic;
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .source-card .description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .source-card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            background-color: rgba(160, 82, 45, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        .reading-list {
+            margin-bottom: 48px;
+        }
+
+        .reading-list ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .reading-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .reading-list li:last-child {
+            border-bottom: none;
+        }
+
+        .next-episode {
+            background: linear-gradient(135deg, var(--text) 0%, var(--muted) 100%);
+            color: var(--bg);
+            padding: 32px;
+            border-radius: 4px;
+            margin-bottom: 48px;
+        }
+
+        .next-episode h3 {
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .next-episode p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 2px solid var(--border);
+            color: var(--muted);
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer p {
+            margin-bottom: 8px;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 32px 16px;
+            }
+
+            .episode-title {
+                font-size: 32px;
+            }
+
+            .ideas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="podcast-header">
+            <div class="episode-number">Season 1, Episode 4</div>
+            <h1 class="episode-title">The Metric Trap</h1>
+            <div class="season-name">Learning to See</div>
+        </div>
+
+        <!-- Provocation -->
+        <div class="provocation">
+            <span class="provocation-label">The Provocation</span>
+            <p>Look at the last decision you made using data. What did the data *not* tell you? What could it not tell you? That gap isn't ignorance. That gap is the space where wisdom lives.</p>
+        </div>
+
+        <!-- Summary -->
+        <section class="episode-summary">
+            <h2 class="section-title">Episode Summary</h2>
+            <p>This episode exposes the invisible cage that metrics create. Goodhart's Law is the core: when a measure becomes a target, it ceases to be a good measure. The episode walks through real-world collapses—Instagram's engagement optimizing away user wellbeing, schools teaching to tests instead of teaching students to think, organizations hitting all their KPIs while losing their soul.</p>
+            <p>The insight isn't that metrics are bad. It's that metrics are tools that reveal certain things while hiding others. The moment you optimize for the metric, you've already lost sight of what the metric was measuring. Matthew Crawford's mechanic knows what the dashboard can't—the lived reality of the engine. The episode provides practice: comparing your intuitive knowing against the data, and getting curious about where they diverge. That gap is where real learning lives.</p>
+        </section>
+
+        <!-- Key Ideas -->
+        <section class="key-ideas">
+            <h2 class="section-title">Key Ideas</h2>
+            <div class="ideas-grid">
+                <div class="idea-card">
+                    <h4>Goodhart's Law</h4>
+                    <p>"When a measure becomes a target, it ceases to be a good measure." The moment optimization begins, the metric stops measuring what it was meant to measure and becomes a game to be won.</p>
+                </div>
+                <div class="idea-card">
+                    <h4>The Menu Is Not the Food</h4>
+                    <p>Metrics are useful for navigation, but the moment you optimize the menu instead of the meal, you've lost the plot. The signal has become the goal. The map has replaced the territory.</p>
+                </div>
+                <div class="idea-card">
+                    <h4>Direct Contact with Reality</h4>
+                    <p>Crawford's mechanic has hands on the engine. Reality corrects him in real time. The spreadsheet worker can create entire systems of wrong that feel right for years because nobody's touching reality.</p>
+                </div>
+                <div class="idea-card">
+                    <h4>The Four Kinds of Knowing</h4>
+                    <p>Most metrics capture level one (propositional). Decisions that matter require level four (participatory/wisdom). You can't measure your way to wisdom. The highest decisions require presence, not precision.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sources -->
+        <section class="sources">
+            <h2 class="section-title">Sources & Thinkers</h2>
+
+            <div class="source-section">
+                <div class="source-section-title">From the Vault</div>
+
+                <div class="source-card">
+                    <div class="author">Robert M. Pirsig</div>
+                    <div class="title">Zen and the Art of Motorcycle Maintenance, Lila</div>
+                    <div class="description">"Value is not a property of things—things are a property of value." The measurement has causation backwards. Value creates the world; metrics try to capture something that precedes them.</div>
+                    <div class="tags">
+                        <span class="tag">Value</span>
+                        <span class="tag">Quality</span>
+                        <span class="tag">Ontology</span>
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <div class="author">John Vervaeke</div>
+                    <div class="title">Awakening from the Meaning Crisis</div>
+                    <div class="description">The four kinds of knowing mapped against what measurement can capture. Most organizational work never leaves level two. The decisions that matter require level four.</div>
+                    <div class="tags">
+                        <span class="tag">Four Kinds</span>
+                        <span class="tag">Wisdom</span>
+                        <span class="tag">Knowing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="source-section">
+                <div class="source-section-title">Deep Research</div>
+
+                <div class="source-card">
+                    <div class="author">Charles Goodhart</div>
+                    <div class="title">Goodhart's Law (1975)</div>
+                    <div class="description">The principle that broke economics and explains every measurement failure: the moment metrics become targets, they stop being reliable measures. The foundation of understanding metric collapse.</div>
+                    <div class="tags">
+                        <span class="tag">Metrics</span>
+                        <span class="tag">Economics</span>
+                        <span class="tag">Law</span>
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <div class="author">Matthew Crawford</div>
+                    <div class="title">Shop Class as Soulcraft</div>
+                    <div class="description">The mechanic's hands know what the dashboard cannot. Direct contact with reality provides feedback that spreadsheets cannot capture. The power of manual labor and craftsmanship.</div>
+                    <div class="tags">
+                        <span class="tag">Embodied Knowledge</span>
+                        <span class="tag">Reality</span>
+                        <span class="tag">Craft</span>
+                    </div>
+                </div>
+
+                <div class="source-card">
+                    <div class="author">McNamara's Vietnam</div>
+                    <div class="title">Historical Case Study</div>
+                    <div class="description">The ultimate example of metric optimization gone catastrophic. Body counts, sortie rates, statistical measures that looked like progress while the war itself was lost. Measurement can hide the actual reality.</div>
+                    <div class="tags">
+                        <span class="tag">History</span>
+                        <span class="tag">Metrics</span>
+                        <span class="tag">Failure</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reading List -->
+        <section class="reading-list">
+            <h2 class="section-title">Complete Reading List</h2>
+            <ul>
+                <li>Pirsig, Robert M. <em>Zen and the Art of Motorcycle Maintenance</em> (1974)</li>
+                <li>Pirsig, Robert M. <em>Lila: An Inquiry into Morals</em> (1991)</li>
+                <li>Vervaeke, John. <em>Awakening from the Meaning Crisis</em> (2019 Lecture Series)</li>
+                <li>Crawford, Matthew. <em>Shop Class as Soulcraft</em> (2009)</li>
+                <li>Goodhart, Charles. <em>On "Goodhart's Law"</em> (1975)</li>
+            </ul>
+        </section>
+
+        <!-- Next Episode -->
+        <div class="next-episode">
+            <h3>Next Episode</h3>
+            <p>Numbers to Leave Numbers — you need the numbers to leave the numbers. The calculation has to become so integrated into the nervous system that it can be forgotten. Form dissolves into flow.</p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p><strong>Memories from My Future Self</strong></p>
+            <p>Everything I Wish I'd Known Sooner</p>
+            <p><a href="https://fromfutureself.com">fromfutureself.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>
