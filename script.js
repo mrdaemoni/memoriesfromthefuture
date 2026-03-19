@@ -382,6 +382,25 @@ if (notesRoot) {
   const notesData = window.NOTES_DATA || {};
   const bodyContent = notesData[episode] || notesData["01"];
   const episodeLinks = document.querySelectorAll("[data-episode-link]");
+  const currentEpisodeLabel = document.querySelector("[data-current-episode]");
+  const episodeTitles = {
+    "01": "E01. Still Carving Bones",
+    "02": "E02. The Water We Swim In",
+    "03": "E03. The Discipline of Attention",
+    "04": "E04. The Metric Trap",
+    "05": "E05. Numbers to Leave Numbers",
+    "06": "E06. Attention Changes the World",
+    "07": "E07. Knowing Before Knowing",
+  };
+  const episodeLinksMap = {
+    "01": "show-notes.html?episode=01",
+    "02": "show-notes.html?episode=02",
+    "03": "show-notes.html?episode=03",
+    "04": "show-notes.html?episode=04",
+    "05": "show-notes.html?episode=05",
+    "06": "show-notes.html?episode=06",
+    "07": "show-notes.html?episode=07",
+  };
 
   episodeLinks.forEach((link) => {
     if (link.getAttribute("data-episode-link") === episode) {
@@ -391,8 +410,87 @@ if (notesRoot) {
     }
   });
 
+  if (currentEpisodeLabel) {
+    currentEpisodeLabel.textContent = episodeTitles[episode] || episodeTitles["01"];
+  }
+
   if (bodyContent) {
     notesRoot.innerHTML = bodyContent;
+
+    const flattenInlineEmphasis = (root) => {
+      root.querySelectorAll("strong, b, em").forEach((node) => {
+        node.replaceWith(document.createTextNode(node.textContent || ""));
+      });
+    };
+
+    notesRoot.querySelectorAll(".episode-summary p, .provocation p").forEach((paragraph) => {
+      paragraph.classList.add("notes-body-paragraph");
+      flattenInlineEmphasis(paragraph);
+    });
+
+    const ideaGrids = notesRoot.querySelectorAll(".ideas-grid");
+
+    ideaGrids.forEach((grid) => {
+      const section = grid.closest(".key-ideas");
+
+      if (!section) {
+        return;
+      }
+
+      const cards = grid.querySelectorAll(".idea-card");
+
+      cards.forEach((card) => {
+        const title = card.querySelector("h4")?.textContent?.trim();
+        const body = card.querySelector("p")?.textContent?.trim();
+
+        if (!title || !body) {
+          return;
+        }
+
+        const normalizedIdea = document.createElement("div");
+        normalizedIdea.className = "key-idea";
+
+        const strong = document.createElement("strong");
+        strong.textContent = title;
+
+        normalizedIdea.append(strong, document.createTextNode(` — ${body}`));
+        section.insertBefore(normalizedIdea, grid);
+      });
+
+      grid.remove();
+    });
+
+    const nextEpisode = notesRoot.querySelector(".next-episode");
+
+    if (nextEpisode) {
+      const nextNumber = String(Number(episode) + 1).padStart(2, "0");
+      const nextTitle = episodeTitles[nextNumber];
+      const nextHref = episodeLinksMap[nextNumber];
+      const existingParagraph = nextEpisode.querySelector("p");
+
+      if (nextTitle && nextHref) {
+        nextEpisode.innerHTML = "";
+
+        const label = document.createElement("div");
+        label.className = "next-episode-label";
+        label.textContent = "Next Episode";
+
+        const titleLink = document.createElement("a");
+        titleLink.className = "next-episode-link";
+        titleLink.href = nextHref;
+        titleLink.textContent = nextTitle;
+
+        nextEpisode.append(label, titleLink);
+
+        if (existingParagraph) {
+          const teaser = document.createElement("p");
+          teaser.className = "next-episode-copy";
+          teaser.textContent = existingParagraph.textContent.trim();
+          nextEpisode.append(teaser);
+        }
+      }
+    }
+
     window.scrollTo(0, 0);
   } else {
     notesRoot.innerHTML =

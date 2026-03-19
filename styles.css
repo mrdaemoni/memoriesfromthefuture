@@ -32,7 +32,7 @@ body {
 
 .site-nav {
   position: fixed;
-  top: 1.4rem;
+  top: 1rem;
   left: 50%;
   z-index: 3;
   display: flex;
@@ -202,45 +202,107 @@ body {
   opacity: 1;
 }
 
-.notes-page .site-nav {
-  top: 1rem;
+.season-menu {
+  position: relative;
+  z-index: 1;
+  width: min(860px, calc(100vw - 2rem));
+  margin: 5.8rem auto 0;
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 50px rgba(209, 199, 209, 0.18);
 }
 
-.episode-nav {
-  position: fixed;
-  top: 3.7rem;
-  left: 50%;
-  z-index: 3;
+.season-menu[open] {
+  padding-bottom: 1.5rem;
+}
+
+.season-menu-toggle {
   display: flex;
-  gap: 0.8rem;
-  transform: translateX(-50%);
+  align-items: flex-start;
+  gap: 1.4rem;
+  padding: 1.55rem 1.8rem;
+  list-style: none;
+  cursor: pointer;
 }
 
-.episode-nav a {
-  color: #d1c7d1;
+.season-menu-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.season-menu-icon {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.38rem;
+  padding-top: 0.35rem;
+}
+
+.season-menu-icon span {
+  width: 2.2rem;
+  height: 0.18rem;
+  border-radius: 999px;
+  background: #8f8390;
+}
+
+.season-menu-copy {
+  display: grid;
+  gap: 0.45rem;
+  text-align: left;
+}
+
+.season-menu-season,
+.season-menu-current,
+.season-menu-panel a {
+  color: #8f8390;
+  font-family: "Libre Bodoni", serif;
+}
+
+.season-menu-season {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.season-menu-season strong {
+  font-weight: 600;
+}
+
+.season-menu-current {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.season-menu-panel {
+  display: grid;
+  gap: 1.5rem;
+  padding: 0 1.8rem 0 5.25rem;
+}
+
+.season-menu-panel a {
   text-decoration: none;
-  font-family: "Libre Bodoni", serif;
-  font-size: 14px;
-  font-style: italic;
-  opacity: 0.5;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.32;
+  transition: opacity 180ms ease, color 180ms ease;
 }
 
-.episode-nav span {
-  color: #d1c7d1;
-  font-family: "Libre Bodoni", serif;
-  font-size: 14px;
-  font-style: italic;
-  opacity: 0.5;
+.season-menu-panel a[aria-current="page"] {
+  color: #1a121a;
+  opacity: 1;
 }
 
-.episode-nav a[aria-current="page"] {
-  opacity: 0.98;
+.season-menu-panel a:hover {
+  opacity: 0.72;
 }
 
 .notes-shell {
   position: relative;
   z-index: 1;
-  padding: 7.5rem 1.5rem 5rem;
+  padding: 1.6rem 1.5rem 5rem;
 }
 
 .notes-episode {
@@ -255,6 +317,16 @@ body {
 
 .legacy-notes {
   color: #6e646e;
+  --notes-column: 1.7rem;
+  --notes-title-size: clamp(44px, 6vw, 74px);
+  --notes-subtitle-size: 28px;
+  --notes-body-size: 16px;
+  --notes-body-line-height: 1.45;
+  --notes-body-color: #6f6670;
+}
+
+.legacy-notes .container {
+  padding: 0;
 }
 
 .notes-loading {
@@ -269,10 +341,12 @@ body {
 }
 
 .legacy-notes .podcast-name,
-.legacy-notes h2,
-.legacy-notes h3,
 .legacy-notes .author,
-.legacy-notes .label {
+.legacy-notes .label,
+.legacy-notes .episode-number,
+.legacy-notes .season-name,
+.legacy-notes .provocation-label,
+.legacy-notes .source-section-title {
   color: #887d88;
 }
 
@@ -287,20 +361,10 @@ body {
   margin: 0.6rem 0 0;
   color: #887d88;
   font-family: "Libre Bodoni", serif;
-  font-size: clamp(44px, 6vw, 74px);
+  font-size: var(--notes-title-size);
   font-style: italic;
   font-weight: 400;
   line-height: 1.02;
-}
-
-.legacy-notes .episode-subtitle {
-  margin: 0.75rem 0 0;
-  color: #6e646e;
-  font-family: "Libre Bodoni", serif;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.25;
 }
 
 .legacy-notes .episode-meta,
@@ -308,13 +372,56 @@ body {
 .legacy-notes li,
 .legacy-notes .description,
 .legacy-notes .teaser,
-.legacy-notes .year {
-  color: #6e646e;
+.legacy-notes .year,
+.legacy-notes .book-title,
+.legacy-notes .link,
+.legacy-notes a {
+  color: var(--notes-body-color);
   font-family: "Libre Bodoni", serif;
-  font-size: 18px;
+  font-size: var(--notes-body-size);
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: var(--notes-body-line-height);
+  text-align: left;
+}
+
+.legacy-notes strong,
+.legacy-notes b {
+  font-weight: 400;
+}
+
+.legacy-notes h2,
+.legacy-notes h3,
+.legacy-notes .section-title {
+  color: #887d88;
+  font-family: "Libre Bodoni", serif;
+  font-size: var(--notes-subtitle-size);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.legacy-notes .episode-subtitle,
+.legacy-notes .season-name,
+.legacy-notes .episode-number,
+.legacy-notes .source-card .title,
+.legacy-notes .next-episode-link {
+  color: var(--notes-body-color);
+  font-family: "Libre Bodoni", serif;
+  font-size: var(--notes-body-size);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--notes-body-line-height);
+}
+
+.legacy-notes .episode-subtitle,
+.legacy-notes .season-name,
+.legacy-notes .episode-number,
+.legacy-notes h2,
+.legacy-notes h3,
+.legacy-notes .section-title,
+.legacy-notes .next-episode .title {
+  text-align: left;
 }
 
 .legacy-notes .episode-meta {
@@ -323,115 +430,201 @@ body {
   opacity: 0.9;
 }
 
-.legacy-notes .provocation,
-.legacy-notes h2,
-.legacy-notes .source-card,
-.legacy-notes .next-episode,
-.legacy-notes .footer {
-  margin-top: 1rem;
+.legacy-notes .episode-subtitle,
+.legacy-notes .season-name {
+  margin: 0.75rem 0 0;
+}
+
+.legacy-notes .episode-number,
+.legacy-notes .source-section-title,
+.legacy-notes .author,
+.legacy-notes .provocation-label,
+.legacy-notes .next-episode-label,
+.legacy-notes .label {
+  margin: 0 0 0.5rem;
+  font-family: "Libre Bodoni", serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.35;
 }
 
 .legacy-notes h2 {
-  margin-bottom: 0;
-  padding: 1.35rem 1.7rem 0;
-  font-family: "Libre Bodoni", serif;
-  font-size: 32px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.15;
+  margin: 0 0 1rem;
+  padding: 0;
 }
 
 .legacy-notes h3 {
-  margin: 1rem 0 0;
-  font-family: "Libre Bodoni", serif;
-  font-size: 24px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.2;
+  margin: 0 0 0.6rem;
+}
+
+.legacy-notes .podcast-header,
+.legacy-notes .episode-summary,
+.legacy-notes .key-ideas,
+.legacy-notes .sources,
+.legacy-notes .reading-list,
+.legacy-notes .next-episode,
+.legacy-notes .provocation,
+.legacy-notes > h2,
+.legacy-notes > p {
+  padding-left: var(--notes-column);
+  padding-right: var(--notes-column);
+}
+
+.legacy-notes .provocation,
+.legacy-notes .episode-summary,
+.legacy-notes .key-ideas,
+.legacy-notes .sources,
+.legacy-notes .reading-list,
+.legacy-notes .next-episode,
+.legacy-notes > h2,
+.legacy-notes > p {
+  margin-top: 1.5rem;
+  text-align: left;
 }
 
 .legacy-notes .provocation {
-  padding: 1.35rem 1.7rem;
+  padding-top: 1.35rem;
   border-top: 1px solid rgba(160, 146, 160, 0.14);
 }
 
 .legacy-notes .provocation p {
   margin: 0;
-  font-size: clamp(22px, 3vw, 32px);
-  line-height: 1.32;
-  color: #746974;
 }
 
 .legacy-notes > p,
-.legacy-notes .key-idea,
-.legacy-notes .reading-list,
-.legacy-notes .footer {
-  margin: 0;
-  padding: 1rem 1.7rem 0;
-}
-
-.legacy-notes .key-idea {
-  padding-top: 1.1rem;
-}
-
-.legacy-notes .source-card,
 .legacy-notes .next-episode {
-  padding: 1.1rem 1.7rem 0;
-}
-
-.legacy-notes .source-card .author {
-  margin: 0 0 0.4rem;
-  font-family: "Libre Bodoni", serif;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.legacy-notes .source-card .title,
-.legacy-notes .next-episode .title {
-  color: #887d88;
-  font-family: "Libre Bodoni", serif;
-  font-size: 27px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.15;
-}
-
-.legacy-notes .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
   margin-top: 1rem;
 }
 
-.legacy-notes .tag {
-  padding: 0.25rem 0.7rem;
-  border-radius: 999px;
-  background: rgba(209, 199, 209, 0.18);
-  color: #7a6e7a;
-  font-family: "Libre Bodoni", serif;
-  font-size: 12px;
-  font-style: italic;
+.legacy-notes .source-section,
+.legacy-notes .source-card,
+.legacy-notes .key-idea,
+.legacy-notes .reading-list li {
+  margin-top: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.legacy-notes > .key-idea {
+  padding-left: var(--notes-column);
+  padding-right: var(--notes-column);
+}
+
+.legacy-notes > .source-card {
+  padding-left: var(--notes-column);
+  padding-right: var(--notes-column);
+}
+
+.legacy-notes .source-card .author,
+.legacy-notes .source-card .title,
+.legacy-notes .source-card .description,
+.legacy-notes .source-card .link,
+.legacy-notes .next-episode-label,
+.legacy-notes .next-episode-link,
+.legacy-notes .next-episode-copy {
+  margin-left: 0;
+  padding-left: 0;
+  text-align: left;
+}
+
+.legacy-notes .source-card .title,
+.legacy-notes .next-episode-link,
+.legacy-notes .next-episode .title {
+  display: block;
+  margin: 0 0 0.35rem;
+}
+
+.legacy-notes .description,
+.legacy-notes .teaser,
+.legacy-notes .episode-summary p,
+.legacy-notes .provocation p,
+.legacy-notes .notes-body-paragraph,
+.legacy-notes .key-idea,
+.legacy-notes .reading-list li,
+.legacy-notes .source-card .description,
+.legacy-notes .next-episode-copy,
+.legacy-notes > p {
+  color: var(--notes-body-color);
+  font-size: var(--notes-body-size);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--notes-body-line-height);
+}
+
+.legacy-notes .episode-summary,
+.legacy-notes .episode-summary p,
+.legacy-notes .episode-summary .notes-body-paragraph,
+.legacy-notes .episode-summary em,
+.legacy-notes .episode-summary strong,
+.legacy-notes .episode-summary b,
+.legacy-notes .provocation,
+.legacy-notes .provocation p,
+.legacy-notes .provocation .notes-body-paragraph,
+.legacy-notes .provocation em,
+.legacy-notes .provocation strong,
+.legacy-notes .provocation b {
+  color: var(--notes-body-color) !important;
+  font-family: "Libre Bodoni", serif !important;
+  font-size: var(--notes-body-size) !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: var(--notes-body-line-height) !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+
+.legacy-notes .next-episode {
+  padding-top: 1rem;
+}
+
+.legacy-notes .next-episode-link {
+  text-decoration: none;
+}
+
+.legacy-notes .next-episode-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.legacy-notes .next-episode-copy {
+  margin: 0;
+}
+
+.legacy-notes .source-card,
+.legacy-notes .source-section,
+.legacy-notes .source-section-title,
+.legacy-notes .author,
+.legacy-notes .title,
+.legacy-notes .description,
+.legacy-notes .link,
+.legacy-notes .episode-summary p,
+.legacy-notes .provocation p,
+.legacy-notes .key-idea,
+.legacy-notes .reading-list li {
+  text-align: left;
+}
+
+.legacy-notes .tags {
+  display: none;
 }
 
 .legacy-notes a {
   color: #7b6f7b;
-  font-family: "Libre Bodoni", serif;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
   text-decoration: underline;
   text-underline-offset: 0.16em;
 }
 
 .legacy-notes .reading-list {
   list-style: none;
+  margin: 0;
+  padding-top: 0;
+  padding-left: var(--notes-column);
+  padding-right: var(--notes-column);
 }
 
 .legacy-notes .reading-list li {
-  padding: 0.8rem 0;
+  padding: 0.8rem 0 0.9rem;
   border-bottom: 1px solid rgba(160, 146, 160, 0.14);
 }
 
@@ -440,7 +633,7 @@ body {
 }
 
 .legacy-notes .footer {
-  margin-bottom: 3rem;
+  display: none;
 }
 
 @keyframes memory-shimmer {
@@ -504,12 +697,42 @@ body {
     padding-right: 1rem;
   }
 
+  .season-menu {
+    width: min(100vw - 1.5rem, 860px);
+    margin-top: 5.4rem;
+  }
+
+  .season-menu-toggle {
+    gap: 1rem;
+    padding: 1.2rem 1rem;
+  }
+
+  .season-menu-season,
+  .season-menu-current,
+  .season-menu-panel a {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .season-menu-panel {
+    gap: 1rem;
+    padding: 0 1rem 0 3.7rem;
+  }
+
   .notes-hero,
   .notes-block {
     padding: 1.5rem;
   }
 
   .legacy-notes .episode-subtitle,
+  .legacy-notes .episode-number,
+  .legacy-notes .season-name,
+  .legacy-notes h2,
+  .legacy-notes h3,
+  .legacy-notes .section-title,
+  .legacy-notes .source-card .title,
+  .legacy-notes .next-episode-link,
+  .legacy-notes .next-episode .title,
   .legacy-notes .episode-meta,
   .legacy-notes p,
   .legacy-notes li,
@@ -517,5 +740,9 @@ body {
   .legacy-notes .teaser,
   .legacy-notes .year {
     font-size: 17px;
+  }
+
+  .legacy-notes .episode-title {
+    font-size: clamp(38px, 12vw, 60px);
   }
 }
