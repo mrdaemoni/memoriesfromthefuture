@@ -72,15 +72,20 @@ body {
 .home-section {
   position: relative;
   min-height: 100vh;
+  padding: 7.5rem 1.5rem 3.5rem;
 }
 
 .overlay {
-  position: absolute;
-  inset: 50% auto auto 50%;
-  transform: translate(-50%, -50%);
   width: min(720px, calc(100vw - 2rem));
+  margin: 0 auto;
   text-align: center;
   z-index: 1;
+}
+
+.overlay-home {
+  display: grid;
+  gap: 1.9rem;
+  width: min(1240px, calc(100vw - 2rem));
 }
 
 .title-block {
@@ -123,27 +128,19 @@ body {
   animation-duration: 9.6s;
 }
 
-.episode-card {
-  margin: 1.75rem auto 0;
-  width: min(620px, 100%);
-  pointer-events: auto;
-}
-
-.episode-card iframe {
-  display: block;
-  width: 100%;
-  border: 0;
-  border-radius: 12px;
-  opacity: 0.92;
-}
-
 .subscribe-link {
   display: inline-block;
-  margin-top: 0.85rem;
   font-family: "Libre Bodoni", serif;
-  font-size: 20px;
+  font-size: 18px;
   font-style: italic;
   opacity: 0.9;
+}
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .content-section {
@@ -152,6 +149,281 @@ body {
   padding: 6rem 1.5rem;
   display: grid;
   place-items: center;
+}
+
+.episodes-section {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+}
+
+.episodes-shell {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.episodes-header {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.episodes-title,
+.episodes-copy,
+.episode-browse-number,
+.episode-browse-code,
+.episode-browse-title,
+.episode-browse-description,
+.episode-browse-listen,
+.episode-browse-more {
+  font-family: "Libre Bodoni", serif;
+}
+
+.episodes-title {
+  margin: 0;
+  color: #d1c7d1;
+  font-size: clamp(38px, 5vw, 62px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.episodes-copy {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  color: #7c727c;
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+.episodes-filter {
+  border: 0;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.episodes-filter:hover {
+  transform: translateY(-1px);
+}
+
+.episodes-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+.episodes-filter {
+  padding: 0.75rem 1.15rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  color: #8f8390;
+  font-family: "Libre Bodoni", serif;
+  font-size: 15px;
+  line-height: 1;
+  box-shadow: inset 0 0 0 1px rgba(143, 131, 144, 0.12);
+}
+
+.episodes-filter.is-active {
+  background: #8f8390;
+  color: #fffaff;
+}
+
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.episode-browse-card {
+  position: relative;
+  min-height: 25rem;
+  padding: 1.15rem;
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fffaf7;
+  background-color: #1f171f;
+  background-image: var(--episode-image);
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    opacity 220ms ease;
+}
+
+.episode-browse-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(180deg, rgba(10, 8, 13, 0.16) 0%, rgba(10, 8, 13, 0.5) 44%, rgba(10, 8, 13, 0.9) 100%),
+    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.18), transparent 40%);
+}
+
+.episode-browse-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
+}
+
+.episode-browse-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(27, 19, 30, 0.18);
+}
+
+.episode-browse-card.is-featured {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow:
+    0 20px 54px rgba(27, 19, 30, 0.24),
+    0 0 0 1px rgba(255, 250, 247, 0.2);
+}
+
+.episode-browse-card.is-featured::after {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0)),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14), transparent 46%);
+}
+
+.episode-browse-card.is-featured .episode-browse-number,
+.episode-browse-card.is-featured .episode-browse-title,
+.episode-browse-card.is-featured .episode-browse-listen {
+  text-shadow: 0 0 22px rgba(255, 250, 247, 0.16);
+}
+
+.episode-browse-card.is-current {
+  box-shadow:
+    0 20px 54px rgba(27, 19, 30, 0.24),
+    0 0 0 1px rgba(255, 250, 247, 0.24);
+}
+
+.episode-browse-top,
+.episode-browse-body {
+  position: relative;
+  z-index: 1;
+}
+
+.episode-browse-top {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.episode-browse-number {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 58px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.episode-browse-code {
+  margin: 0;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  opacity: 0.82;
+  text-transform: uppercase;
+}
+
+.episode-browse-body {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: auto;
+  padding-top: 3.8rem;
+}
+
+.episode-browse-title {
+  margin: 0;
+  max-width: 11ch;
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.episode-browse-description {
+  margin: 0;
+  max-width: 28ch;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.36;
+  color: rgba(255, 250, 247, 0.88);
+}
+
+.episode-browse-listen {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 0.3rem;
+  padding: 0.82rem 1.45rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+  color: #fffaf7;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  backdrop-filter: blur(10px);
+}
+
+.episode-browse-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.episode-browse-listen,
+.episode-browse-more {
+  text-decoration: none;
+}
+
+.episode-browse-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0.82rem 1.45rem;
+  border-radius: 999px;
+  background: rgba(13, 10, 16, 0.32);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+  color: rgba(255, 250, 247, 0.92);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  backdrop-filter: blur(10px);
+}
+
+.episode-browse-more.is-current {
+  cursor: default;
+  background: rgba(255, 250, 247, 0.22);
+  color: #fffaf7;
+}
+
+.episodes-empty {
+  padding: 2rem;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.42);
+  color: #8f8390;
+  font-family: "Libre Bodoni", serif;
+  font-size: 20px;
+  text-align: center;
 }
 
 .section-card {
@@ -200,6 +472,409 @@ body {
   font-style: normal;
   font-weight: 400;
   opacity: 1;
+}
+
+.episode-page-body {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.72), transparent 28%),
+    radial-gradient(circle at 82% 24%, rgba(209, 199, 209, 0.2), transparent 24%),
+    linear-gradient(180deg, #fffcff 0%, #f7f1f8 100%);
+}
+
+.episode-page-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100vw - 2rem));
+  margin: 5.8rem auto 4rem;
+  display: grid;
+  gap: 1.4rem;
+}
+
+.episode-menu {
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 50px rgba(209, 199, 209, 0.18);
+}
+
+.episode-menu[open] {
+  padding-bottom: 1.3rem;
+}
+
+.episode-menu-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.4rem;
+  padding: 1.55rem 1.8rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+.episode-menu-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.episode-menu-copy {
+  display: grid;
+  gap: 0.45rem;
+  text-align: left;
+}
+
+.episode-menu-season,
+.episode-menu-current,
+.episode-menu-link,
+.episode-page-overline,
+.episode-page-code,
+.episode-page-dek,
+.episode-page-quote,
+.episode-page-button,
+.episode-page-panel-label,
+.episode-idea-card p,
+.episode-thinker-card p,
+.episode-thinker-card a,
+.episode-reading-list li,
+.episode-page-nav-card span,
+.episode-page-nav-card strong,
+.episode-page-meta-copy,
+.episode-page-meta-value {
+  font-family: "Libre Bodoni", serif;
+}
+
+.episode-menu-season,
+.episode-menu-link {
+  color: #8f8390;
+}
+
+.episode-menu-season {
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.episode-menu-current {
+  color: #6f6670;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.episode-menu-panel {
+  display: grid;
+  gap: 1.3rem;
+  padding: 0 1.8rem 0 5.25rem;
+}
+
+.episode-menu-group {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.episode-menu-group-title {
+  color: #887d88;
+  font-family: "Libre Bodoni", serif;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.episode-menu-links {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.episode-menu-link {
+  text-decoration: none;
+  font-size: 17px;
+  opacity: 0.38;
+}
+
+.episode-menu-link[aria-current="page"] {
+  color: #1a121a;
+  opacity: 1;
+}
+
+.episode-page-hero,
+.episode-page-panel,
+.episode-page-nav-card {
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 52px rgba(209, 199, 209, 0.14);
+}
+
+.episode-page-hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: 1.5rem;
+  min-height: 36rem;
+  padding: 2rem;
+}
+
+.episode-page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, rgba(14, 10, 18, 0.7), rgba(14, 10, 18, 0.24)),
+    var(--episode-hero-image) center / cover no-repeat;
+  filter: saturate(0.95) contrast(1.05);
+}
+
+.episode-page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.18), transparent 25%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
+}
+
+.episode-page-hero-inner,
+.episode-page-audio {
+  position: relative;
+  z-index: 1;
+}
+
+.episode-page-hero-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-width: 46rem;
+  padding-top: 5rem;
+}
+
+.episode-page-overline,
+.episode-page-code {
+  color: rgba(255, 250, 247, 0.84);
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.episode-page-code {
+  margin-top: 0.85rem;
+}
+
+.episode-page-title {
+  margin: 0.9rem 0 0;
+  color: #fffaf7;
+  font-family: "Libre Bodoni", serif;
+  font-size: clamp(54px, 6vw, 92px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.episode-page-dek {
+  width: min(32rem, 100%);
+  margin: 1rem 0 0;
+  color: rgba(255, 250, 247, 0.86);
+  font-size: 22px;
+  line-height: 1.42;
+}
+
+.episode-page-quote {
+  width: min(34rem, 100%);
+  margin: 1.5rem 0 0;
+  padding-left: 1.1rem;
+  border-left: 1px solid rgba(255, 250, 247, 0.35);
+  color: rgba(255, 250, 247, 0.94);
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.48;
+}
+
+.episode-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.episode-page-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 11rem;
+  padding: 0.92rem 1.4rem;
+  border-radius: 999px;
+  color: #fffaf7;
+  text-decoration: none;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+}
+
+.episode-page-button.is-primary {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.episode-page-audio {
+  align-self: end;
+}
+
+.episode-page-audio iframe {
+  display: block;
+  border: 0;
+  border-radius: 24px;
+  opacity: 0.96;
+}
+
+.episode-page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 1.4rem;
+}
+
+.episode-page-panel {
+  padding: 1.8rem;
+}
+
+.episode-page-panel-label {
+  color: #887d88;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.episode-page-panel-title {
+  margin: 0.75rem 0 0;
+  color: #887d88;
+  font-family: "Libre Bodoni", serif;
+  font-size: clamp(32px, 4.6vw, 52px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.03;
+}
+
+.episode-page-story p,
+.episode-page-meta-copy,
+.episode-page-meta-value,
+.episode-idea-card p,
+.episode-thinker-card p,
+.episode-reading-list li,
+.episode-page-nav-card span,
+.episode-page-nav-card strong {
+  color: #6f6670;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.episode-page-story p {
+  margin: 1rem 0 0;
+}
+
+.episode-page-meta {
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+}
+
+.episode-page-meta-value {
+  font-size: 28px;
+  font-style: italic;
+  color: #887d88;
+}
+
+.episode-idea-grid,
+.episode-thinker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.episode-idea-card,
+.episode-thinker-card {
+  min-height: 100%;
+  padding: 1.35rem;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.34)),
+    rgba(255, 255, 255, 0.32);
+  box-shadow: inset 0 0 0 1px rgba(209, 199, 209, 0.14);
+}
+
+.episode-idea-card h3,
+.episode-thinker-card h3 {
+  margin: 0;
+  color: #887d88;
+  font-family: "Libre Bodoni", serif;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.06;
+}
+
+.episode-idea-card p,
+.episode-thinker-card p {
+  margin: 0.8rem 0 0;
+}
+
+.episode-thinker-author {
+  margin-bottom: 0.45rem;
+  color: #8f8390;
+  font-family: "Libre Bodoni", serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.episode-thinker-card a {
+  display: inline-block;
+  margin-top: 0.85rem;
+  color: #7b6f7b;
+  font-size: 17px;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.episode-reading-list {
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0;
+}
+
+.episode-reading-list li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(160, 146, 160, 0.14);
+}
+
+.episode-page-library-copy {
+  margin: 0.9rem 0 0;
+  color: #6f6670;
+  font-family: "Libre Bodoni", serif;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.episode-page-library-grid {
+  margin-top: 1.35rem;
+}
+
+.episode-page-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.episode-page-nav-card {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.55rem;
+  text-decoration: none;
+}
+
+.episode-page-nav-card strong {
+  color: #887d88;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.episode-page-nav-card.is-empty {
+  visibility: hidden;
 }
 
 .season-menu {
@@ -711,6 +1386,111 @@ body {
 
   .section-card p {
     font-size: 20px;
+  }
+
+  .episodes-section {
+    padding: 0;
+  }
+
+  .home-section {
+    padding: 6.8rem 1rem 2.5rem;
+  }
+
+  .overlay {
+    width: min(100vw - 1.5rem, 720px);
+  }
+
+  .episodes-copy {
+    font-size: 17px;
+  }
+
+  .hero-links {
+    gap: 0.75rem;
+  }
+
+  .episode-page-shell {
+    width: min(100vw - 1.5rem, 1180px);
+    margin-top: 5.4rem;
+    gap: 1rem;
+  }
+
+  .episode-menu-toggle {
+    gap: 1rem;
+    padding: 1.2rem 1rem;
+  }
+
+  .episode-menu-panel {
+    gap: 1rem;
+    padding: 0 1rem 0 3.7rem;
+  }
+
+  .episode-page-hero {
+    grid-template-columns: 1fr;
+    padding: 1.35rem;
+    min-height: auto;
+  }
+
+  .episode-page-hero-inner {
+    padding-top: 3rem;
+  }
+
+  .episode-page-dek,
+  .episode-page-quote {
+    font-size: 18px;
+  }
+
+  .episode-page-grid,
+  .episode-page-nav,
+  .episode-idea-grid,
+  .episode-thinker-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .episode-page-panel {
+    padding: 1.35rem;
+  }
+
+  .episodes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .episode-browse-card {
+    min-height: 15.5rem;
+    padding: 0.92rem;
+    border-radius: 18px;
+  }
+
+  .episode-browse-number {
+    font-size: 30px;
+  }
+
+  .episode-browse-code {
+    font-size: 10px;
+  }
+
+  .episode-browse-title {
+    max-width: none;
+    font-size: 21px;
+  }
+
+  .episode-browse-description {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .episode-browse-body {
+    padding-top: 2.4rem;
+  }
+
+  .episode-browse-actions {
+    gap: 0.45rem;
+  }
+
+  .episode-browse-listen,
+  .episode-browse-more {
+    padding: 0.58rem 0.8rem;
+    font-size: 13px;
   }
 
   .notes-shell {
