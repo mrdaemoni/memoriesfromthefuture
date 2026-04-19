@@ -378,40 +378,73 @@ if (canvas) {
 
 if (notesRoot) {
   const searchParams = new URLSearchParams(window.location.search);
-  const episode = searchParams.get("episode") || "01";
-  const notesData = window.NOTES_DATA || {};
-  const bodyContent = notesData[episode] || notesData["01"];
+  const legacyNotesData = window.NOTES_DATA || {};
+  const seasonNotes = window.SEASON_NOTES || { "1": legacyNotesData };
   const episodeLinks = document.querySelectorAll("[data-episode-link]");
+  const currentSeasonLabel = document.querySelector("[data-current-season]");
   const currentEpisodeLabel = document.querySelector("[data-current-episode]");
-  const episodeTitles = {
-    "01": "E01. Still Carving Bones",
-    "02": "E02. The Water We Swim In",
-    "03": "E03. The Discipline of Attention",
-    "04": "E04. The Metric Trap",
-    "05": "E05. Numbers to Leave Numbers",
-    "06": "E06. Attention Changes the World",
-    "07": "E07. Knowing Before Knowing",
+  const seasonLibrary = {
+    "1": {
+      menuLabel:
+        "Season 1, Learning to See. From tally marks on bone to knowledge that precedes thought",
+      episodes: {
+        "01": "E01. Still Carving Bones",
+        "02": "E02. The Water We Swim In",
+        "03": "E03. The Discipline of Attention",
+        "04": "E04. The Metric Trap",
+        "05": "E05. Numbers to Leave Numbers",
+        "06": "E06. Attention Changes the World",
+        "07": "E07. Knowing Before Knowing",
+      },
+    },
+    "2": {
+      menuLabel:
+        "Season 2, The Architecture of Becoming. Ten episodes on creativity, attention, love, play, and transformation",
+      episodes: {
+        "01": "E01. You Must Create to Meet Yourself",
+        "02": "E02. The Questions You Carry",
+        "03": "E03. The Body Knows Before the Mind Can Say Why",
+        "04": "E04. Attention Is a Moral Act",
+        "05": "E05. The Center of Boredom",
+        "06": "E06. Loving Someone as They Change",
+        "07": "E07. The Density of Contact",
+        "08": "E08. The Porosity of Humility",
+        "09": "E09. The Fence and the Yard",
+        "10": "E10. Every Real Learning Is a Small Death",
+      },
+    },
   };
-  const episodeLinksMap = {
-    "01": "show-notes.html?episode=01",
-    "02": "show-notes.html?episode=02",
-    "03": "show-notes.html?episode=03",
-    "04": "show-notes.html?episode=04",
-    "05": "show-notes.html?episode=05",
-    "06": "show-notes.html?episode=06",
-    "07": "show-notes.html?episode=07",
-  };
+  const requestedSeason = searchParams.get("season") || "1";
+  const activeSeason = seasonNotes[requestedSeason] ? requestedSeason : "1";
+  const activeSeasonNotes = seasonNotes[activeSeason] || {};
+  const availableEpisodes = Object.keys(activeSeasonNotes);
+  const fallbackEpisode = availableEpisodes[0] || "01";
+  const requestedEpisode = searchParams.get("episode") || fallbackEpisode;
+  const activeEpisode = activeSeasonNotes[requestedEpisode] ? requestedEpisode : fallbackEpisode;
+  const bodyContent = activeSeasonNotes[activeEpisode] || activeSeasonNotes[fallbackEpisode];
+  const buildEpisodeHref = (seasonKey, episodeKey) =>
+    `show-notes.html?season=${seasonKey}&episode=${episodeKey}`;
 
   episodeLinks.forEach((link) => {
-    if (link.getAttribute("data-episode-link") === episode) {
+    const linkSeason = link.getAttribute("data-season-link") || "1";
+    const linkEpisode = link.getAttribute("data-episode-link");
+
+    if (linkSeason === activeSeason && linkEpisode === activeEpisode) {
       link.setAttribute("aria-current", "page");
     } else {
       link.removeAttribute("aria-current");
     }
   });
 
+  if (currentSeasonLabel) {
+    currentSeasonLabel.textContent =
+      seasonLibrary[activeSeason]?.menuLabel || seasonLibrary["1"].menuLabel;
+  }
+
   if (currentEpisodeLabel) {
-    currentEpisodeLabel.textContent = episodeTitles[episode] || episodeTitles["01"];
+    currentEpisodeLabel.textContent =
+      seasonLibrary[activeSeason]?.episodes?.[activeEpisode] ||
+      seasonLibrary["1"].episodes["01"];
   }
 
   if (bodyContent) {
@@ -463,17 +496,32 @@ if (notesRoot) {
     const nextEpisode = notesRoot.querySelector(".next-episode");
 
     if (nextEpisode) {
-      const nextNumber = String(Number(episode) + 1).padStart(2, "0");
-      const nextTitle = episodeTitles[nextNumber];
-      const nextHref = episodeLinksMap[nextNumber];
+      const episodeOrder = Object.keys(seasonLibrary[activeSeason]?.episodes || {});
+      const currentIndex = episodeOrder.indexOf(activeEpisode);
+      const nextEpisodeKey = episodeOrder[currentIndex + 1];
+      let nextTitle = seasonLibrary[activeSeason]?.episodes?.[nextEpisodeKey];
+      let nextHref = nextEpisodeKey ? buildEpisodeHref(activeSeason, nextEpisodeKey) : null;
+      let nextLabel = "Next Episode";
       const existingParagraph = nextEpisode.querySelector("p");
+
+      if (!nextTitle || !nextHref) {
+        const nextSeasonKey = String(Number(activeSeason) + 1);
+        const nextSeasonEpisodes = Object.keys(seasonLibrary[nextSeasonKey]?.episodes || {});
+        const firstNextSeasonEpisode = nextSeasonEpisodes[0];
+
+        if (firstNextSeasonEpisode && seasonNotes[nextSeasonKey]?.[firstNextSeasonEpisode]) {
+          nextTitle = seasonLibrary[nextSeasonKey].episodes[firstNextSeasonEpisode];
+          nextHref = buildEpisodeHref(nextSeasonKey, firstNextSeasonEpisode);
+          nextLabel = "Next Season";
+        }
+      }
 
       if (nextTitle && nextHref) {
         nextEpisode.innerHTML = "";
 
         const label = document.createElement("div");
         label.className = "next-episode-label";
-        label.textContent = "Next Episode";
+        label.textContent = nextLabel;
 
         const titleLink = document.createElement("a");
         titleLink.className = "next-episode-link";

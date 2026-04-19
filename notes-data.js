@@ -7,3 +7,205 @@ window.NOTES_DATA = {
   "06": "<div class=\"container\">\n        <!-- Header -->\n        <div class=\"podcast-header\">\n            <div class=\"episode-number\">Season 1, Episode 6</div>\n            <h1 class=\"episode-title\">Attention Changes the World</h1>\n            <div class=\"season-name\">Learning to See</div>\n        </div>\n\n        <!-- Provocation -->\n        <div class=\"provocation\">\n            <span class=\"provocation-label\">The Provocation</span>\n            <p>Attention changes the world. It literally reconstitutes reality. Makes one world visible, leaves another invisible. What if you're only seeing half? What if the way you attend determines what you find?</p>\n        </div>\n\n        <!-- Summary -->\n        <section class=\"episode-summary\">\n            <h2 class=\"section-title\">Episode Summary</h2>\n            <p>This episode reveals that attention is not passive observation—it's constitutive. How you attend changes what you find. McGilchrist's groundbreaking neuroscience shows that the two hemispheres of the brain attend to the world differently, revealing different realities. The left hemisphere is narrow, grasping, analytical—taking things apart. The right hemisphere is broad, relational, receptive—holding wholes. Both are essential, but our civilization has become dangerously imbalanced toward left-hemisphere dominance.</p>\n            <p>Through Bortoft's \"going upstream\" practice—attending to your attending rather than to objects—the episode provides a method for accessing right-hemisphere knowing. Three moments demonstrate the difference: a photograph revealed differently through two modes of attention, a conversation transformed by receptive presence, and MrHector's work at Amazon holding the tension between left-hemisphere metrics and right-hemisphere values. The practice: intentionally shift attention modes, noticing how the same object becomes a different presence.</p>\n        </section>\n\n        <!-- Key Ideas -->\n        <section class=\"key-ideas\">\n            <h2 class=\"section-title\">Key Ideas</h2>\n            <div class=\"ideas-grid\">\n                <div class=\"idea-card\">\n                    <h4>Two Hemispheres, Two Worlds</h4>\n                    <p>Left: narrow, grasping, analytical, categorical. Right: broad, receptive, relational, whole. Each attends to reality differently and reveals a different world. We've optimized for left-hemisphere knowing and lost the right.</p>\n                </div>\n                <div class=\"idea-card\">\n                    <h4>The Emissary Usurped the Master</h4>\n                    <p>McGilchrist's phrase: the left hemisphere has become dominant, believing it is the whole story. It was meant to serve the right hemisphere's holistic knowing. Instead, it's captured us in a world of reduction and measurement.</p>\n                </div>\n                <div class=\"idea-card\">\n                    <h4>Going Upstream</h4>\n                    <p>Bortoft's practice: shift attention from what you're experiencing to the experience of experiencing it. From the tree to the act of perceiving the tree. This shift unlocks right-hemisphere knowing without abandoning analysis.</p>\n                </div>\n                <div class=\"idea-card\">\n                    <h4>Integration as the Goal</h4>\n                    <p>Not oscillation between modes. Not choosing one. True mastery integrates both—the analytical sharpness AND the receptive openness. Analysis in service of the whole, not in place of it.</p>\n                </div>\n            </div>\n        </section>\n\n        <!-- Sources -->\n        <section class=\"sources\">\n            <h2 class=\"section-title\">Sources & Thinkers</h2>\n\n            <div class=\"source-section\">\n                <div class=\"source-section-title\">From the Vault</div>\n\n                <div class=\"source-card\">\n                    <div class=\"author\"><a href=\"https://channelmcgilchrist.com/\" target=\"_blank\" rel=\"noreferrer\">Iain McGilchrist</a></div>\n                    <div class=\"title\">The Master and His Emissary, The Matter with Things</div>\n                    <div class=\"description\">The definitive neuroscience of how the two hemispheres attend to reality differently. How left-hemisphere dominance has created a civilization of reduction. The path toward rebalancing.</div>\n                    <a class=\"link\" href=\"https://channelmcgilchrist.com/the-matter-with-things/\" target=\"_blank\" rel=\"noreferrer\">Learn more →</a>\n                    <div class=\"tags\">\n                        <span class=\"tag\">Neuroscience</span>\n                        <span class=\"tag\">Hemispheres</span>\n                        <span class=\"tag\">Attention</span>\n                    </div>\n                </div>\n\n                <div class=\"source-card\">\n                    <div class=\"author\"><a href=\"https://en.wikipedia.org/wiki/Henri_Bortoft\" target=\"_blank\" rel=\"noreferrer\">Henri Bortoft</a></div>\n                    <div class=\"title\">The Wholeness of Nature</div>\n                    <div class=\"description\">\"Going upstream\"—the Goethean method of attending to your attending rather than to objects. How to access holistic knowing without abandoning rigor. The practice of perception transformation.</div>\n                    <a class=\"link\" href=\"https://en.wikipedia.org/wiki/Henri_Bortoft\" target=\"_blank\" rel=\"noreferrer\">Learn more →</a>\n                    <div class=\"tags\">\n                        <span class=\"tag\">Goethe</span>\n                        <span class=\"tag\">Upstream</span>\n                        <span class=\"tag\">Wholeness</span>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"source-section\">\n                <div class=\"source-section-title\">Deep Research</div>\n\n                <div class=\"source-card\">\n                    <div class=\"author\"><a href=\"https://channelmcgilchrist.com/\" target=\"_blank\" rel=\"noreferrer\">Iain McGilchrist</a></div>\n                    <div class=\"title\">Lecture Series & Interviews</div>\n                    <div class=\"description\">McGilchrist's detailed exploration of how the two hemispheres create different worlds. Why left-hemisphere dominance is pathological. How rebalancing is possible.</div>\n                    <a class=\"link\" href=\"https://channelmcgilchrist.com/the-matter-with-things/\" target=\"_blank\" rel=\"noreferrer\">Learn more →</a>\n                    <div class=\"tags\">\n                        <span class=\"tag\">Neuroscience</span>\n                        <span class=\"tag\">Pathology</span>\n                        <span class=\"tag\">Culture</span>\n                    </div>\n                </div>\n\n                <div class=\"source-card\">\n                    <div class=\"author\"><a href=\"https://en.wikipedia.org/wiki/Johann_Wolfgang_von_Goethe\" target=\"_blank\" rel=\"noreferrer\">Johann Wolfgang von Goethe</a></div>\n                    <div class=\"title\">Scientific Writings & Method</div>\n                    <div class=\"description\">The original methodology of patient, receptive observation. Attending to nature as a living whole. The foundation of Bortoft's \"going upstream\" practice.</div>\n                    <a class=\"link\" href=\"https://en.wikipedia.org/wiki/Goethe%27s_Theory_of_Colours\" target=\"_blank\" rel=\"noreferrer\">Learn more →</a>\n                    <div class=\"tags\">\n                        <span class=\"tag\">Goethe</span>\n                        <span class=\"tag\">Method</span>\n                        <span class=\"tag\">Nature</span>\n                    </div>\n                </div>\n            </div>\n        </section>\n\n        <!-- Reading List -->\n        <section class=\"reading-list\">\n            <h2 class=\"section-title\">Complete Reading List</h2>\n            <ul>\n                <li><a href=\"https://channelmcgilchrist.com/\" target=\"_blank\" rel=\"noreferrer\">McGilchrist, Iain.</a> <em>The Master and His Emissary</em> (2009)</li>\n                <li><a href=\"https://channelmcgilchrist.com/\" target=\"_blank\" rel=\"noreferrer\">McGilchrist, Iain.</a> <em>The Matter with Things</em> (2021)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Henri_Bortoft\" target=\"_blank\" rel=\"noreferrer\">Bortoft, Henri.</a> <em>The Wholeness of Nature</em> (1996)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Johann_Wolfgang_von_Goethe\" target=\"_blank\" rel=\"noreferrer\">Goethe, Johann Wolfgang von.</a> <em>Scientific Writings</em> (Various)</li>\n            </ul>\n        </section>\n\n        <!-- Next Episode -->\n        <div class=\"next-episode\">\n            <h3>Next Episode</h3>\n            <p>Knowing Before Knowing — the knowledge that precedes thought itself. The wisdom that arrives before the mind catches up. Seven episodes, one ladder. The view from the top.</p>\n        </div>\n\n        <!-- Footer -->\n        <footer class=\"footer\">\n            <p><strong>Memories from My Future Self</strong></p>\n            <p>Everything I Wish I'd Known Sooner</p>\n            <p><a href=\"https://fromfutureself.com\">fromfutureself.com</a></p>\n        </footer>\n    </div>",
   "07": "<div class=\"container\">\n        <!-- Header -->\n        <div class=\"podcast-header\">\n            <div class=\"episode-number\">Season 1, Episode 7 (Finale)</div>\n            <h1 class=\"episode-title\">Knowing Before Knowing</h1>\n            <div class=\"season-name\">Learning to See</div>\n        </div>\n\n        <!-- Provocation -->\n        <div class=\"provocation\">\n            <span class=\"provocation-label\">The Provocation</span>\n            <p>Your body has been speaking to you your entire life. It spoke before you had words. It's still speaking. Right now. Underneath every thought, every spreadsheet, every metric—your body is telling you what's true and what's false. How much longer are you going to pretend you don't?</p>\n        </div>\n\n        <!-- Summary -->\n        <section class=\"episode-summary\">\n            <h2 class=\"section-title\">Episode Summary</h2>\n            <p>This season finale integrates everything that came before. From the abstraction ladder to the subject-object blind spot to attention as discipline to the metric trap to the dissolution of form into flow to the two hemispheres of attending—all of it culminates here, in the knowing that precedes knowledge. Polanyi's cornerstone insight becomes clear: \"We can know more than we can tell.\" The knower is not separate from the knowing. Full stop.</p>\n            <p>The episode maps how expertise becomes wisdom—how integrated knowing operates faster and more reliably than calculation, how the mechanic's hand knows what the computer cannot, how the moment of flow reveals the dissolution of subject and object, how care (the recognition that something matters) precedes all analysis. The season closes not with answers but with recognition: you've always known this. The practice now is letting that knowing move through you. Season 2, \"The Forge,\" will explore what demands of you emerge once you truly see.</p>\n        </section>\n\n        <!-- Key Ideas -->\n        <section class=\"key-ideas\">\n            <h2 class=\"section-title\">Key Ideas</h2>\n            <div class=\"ideas-grid\">\n                <div class=\"idea-card\">\n                    <h4>Tacit Knowing Is the Highest Form</h4>\n                    <p>Polanyi's ultimate insight: you can know more than you can tell. Integrated knowledge operates pre-cognitively, faster and more reliably than explicit calculation. This is not limitation—it's the height of knowing.</p>\n                </div>\n                <div class=\"idea-card\">\n                    <h4>The Mechanic's Hand</h4>\n                    <p>Crawford's embodied expertise: the mechanic's hands know before the mind formulates the diagnosis. Years of direct contact with material reality train the nervous system to recognize, anticipate, respond—at speeds beyond conscious thought.</p>\n                </div>\n                <div class=\"idea-card\">\n                    <h4>Mu—The Refusal of Duality</h4>\n                    <p>Pirsig's Zen concept: when faced with dualistic questions (thought or pre-cognitive? subject or object?), sometimes the answer is mu—the refusal of the question itself. Integration dissolves the duality.</p>\n                </div>\n                <div class=\"idea-card\">\n                    <h4>Care as Pre-Cognitive Foundation</h4>\n                    <p>Dreyfus's final insight: care requires a living body. A machine can optimize, but only a being alive with stakes in the game can care—can recognize that something matters. Care precedes all knowing.</p>\n                </div>\n            </div>\n        </section>\n\n        <!-- Sources -->\n        <section class=\"sources\">\n            <h2 class=\"section-title\">Sources & Thinkers</h2>\n\n            <div class=\"source-section\">\n                <div class=\"source-section-title\">From the Vault</div>\n\n                <div class=\"source-card\">\n                    <div class=\"author\"><a href=\"https://en.wikipedia.org/wiki/Michael_Polanyi\" target=\"_blank\" rel=\"noreferrer\">Michael Polanyi</a></div>\n                    <div class=\"title\">Personal Knowledge, Knowing and Being</div>\n                    <div class=\"description\">\"We can know more than we can tell.\" The knower is not separate from the knowing. The from-to structure of all tacit knowing. The highest form of expertise.</div>\n                    <a class=\"link\" href=\"https://press.uchicago.edu/ucp/books/book/chicago/T/bo6035368.html\" target=\"_blank\" rel=\"noreferrer\">Learn more →</a>\n                    <div class=\"tags\">\n                        <span class=\"tag\">Tacit</span>\n                        <span class=\"tag\">Knowledge</span>\n                        <span class=\"tag\">Ontology</span>\n                    </div>\n                </div>\n\n                <div class=\"source-card\">\n                    <div class=\"author\"><a href=\"https://en.wikipedia.org/wiki/Robert_M._Pirsig\" target=\"_blank\" rel=\"noreferrer\">Robert M. Pirsig</a></div>\n                    <div class=\"title\">Zen and the Art of Motorcycle Maintenance, Lila</div>\n                    <div class=\"description\">Quality before thought. The refusal of duality. Mu. The ultimate integration where categories dissolve and living reality reveals itself.</div>\n                    <a class=\"link\" href=\"https://en.wikipedia.org/wiki/Zen_and_the_Art_of_Motorcycle_Maintenance\" target=\"_blank\" rel=\"noreferrer\">Learn more →</a>\n                    <div class=\"tags\">\n                        <span class=\"tag\">Quality</span>\n                        <span class=\"tag\">Zen</span>\n                        <span class=\"tag\">Integration</span>\n                    </div>\n                </div>\n\n                <div class=\"source-card\">\n                    <div class=\"author\"><a href=\"https://en.wikipedia.org/wiki/Matthew_B._Crawford\" target=\"_blank\" rel=\"noreferrer\">Matthew Crawford</a></div>\n                    <div class=\"title\">Shop Class as Soulcraft</div>\n                    <div class=\"description\">The mechanic's hand knows. Knowing-through-doing. How embodied expertise arises from direct contact with reality. The loss of meaningful work in our abstracted civilization.</div>\n                    <a class=\"link\" href=\"https://en.wikipedia.org/wiki/Shop_Class_as_Soulcraft\" target=\"_blank\" rel=\"noreferrer\">Learn more →</a>\n                    <div class=\"tags\">\n                        <span class=\"tag\">Embodied</span>\n                        <span class=\"tag\">Craft</span>\n                        <span class=\"tag\">Knowledge</span>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"source-section\">\n                <div class=\"source-section-title\">Deep Research</div>\n\n                <div class=\"source-card\">\n                    <div class=\"author\"><a href=\"https://en.wikipedia.org/wiki/Hubert_Dreyfus\" target=\"_blank\" rel=\"noreferrer\">Hubert Dreyfus</a></div>\n                    <div class=\"title\">Being-in-the-World, Later Writings on Expertise</div>\n                    <div class=\"description\">Care requires a living body. A machine cannot care. Only embodied beings with stakes in the outcome can recognize what matters. The pre-cognitive ground of all knowing is care.</div>\n                    <a class=\"link\" href=\"https://en.wikipedia.org/wiki/Hubert_Dreyfus\" target=\"_blank\" rel=\"noreferrer\">Learn more →</a>\n                    <div class=\"tags\">\n                        <span class=\"tag\">Care</span>\n                        <span class=\"tag\">Embodied</span>\n                        <span class=\"tag\">Phenomenology</span>\n                    </div>\n                </div>\n\n                <div class=\"source-card\">\n                    <div class=\"author\"><a href=\"https://en.wikipedia.org/wiki/Henri_Bortoft\" target=\"_blank\" rel=\"noreferrer\">Henri Bortoft</a></div>\n                    <div class=\"title\">The Wholeness of Nature</div>\n                    <div class=\"description\">Going upstream. Attending to the attending. The Goethean method of perceiving wholes. The foundation of integrated knowing.</div>\n                    <a class=\"link\" href=\"https://en.wikipedia.org/wiki/Henri_Bortoft\" target=\"_blank\" rel=\"noreferrer\">Learn more →</a>\n                    <div class=\"tags\">\n                        <span class=\"tag\">Goethe</span>\n                        <span class=\"tag\">Wholeness</span>\n                        <span class=\"tag\">Method</span>\n                    </div>\n                </div>\n\n                <div class=\"source-card\">\n                    <div class=\"author\"><a href=\"https://channelmcgilchrist.com/\" target=\"_blank\" rel=\"noreferrer\">Iain McGilchrist</a></div>\n                    <div class=\"title\">The Master and His Emissary, The Matter with Things</div>\n                    <div class=\"description\">The two hemispheres integrated. How analysis serves wholeness. The rebalancing required to recover what has been amputated by left-hemisphere dominance.</div>\n                    <a class=\"link\" href=\"https://channelmcgilchrist.com/the-matter-with-things/\" target=\"_blank\" rel=\"noreferrer\">Learn more →</a>\n                    <div class=\"tags\">\n                        <span class=\"tag\">Hemispheres</span>\n                        <span class=\"tag\">Integration</span>\n                        <span class=\"tag\">Neuroscience</span>\n                    </div>\n                </div>\n            </div>\n        </section>\n\n        <!-- Reading List -->\n        <section class=\"reading-list\">\n            <h2 class=\"section-title\">Complete Season 1 Reading List</h2>\n            <ul>\n                <li><a href=\"https://en.wikipedia.org/wiki/Robert_M._Pirsig\" target=\"_blank\" rel=\"noreferrer\">Pirsig, Robert M.</a> <em>Zen and the Art of Motorcycle Maintenance</em> (1974)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Robert_M._Pirsig\" target=\"_blank\" rel=\"noreferrer\">Pirsig, Robert M.</a> <em>Lila: An Inquiry into Morals</em> (1991)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Robert_M._Pirsig\" target=\"_blank\" rel=\"noreferrer\">Pirsig, Robert M.</a> <em>On Quality</em> (2022)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Michael_Polanyi\" target=\"_blank\" rel=\"noreferrer\">Polanyi, Michael.</a> <em>Personal Knowledge</em> (1958)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Michael_Polanyi\" target=\"_blank\" rel=\"noreferrer\">Polanyi, Michael.</a> <em>The Tacit Dimension</em> (1966)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Michael_Polanyi\" target=\"_blank\" rel=\"noreferrer\">Polanyi, Michael.</a> <em>Knowing and Being</em> (1969)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Christopher_Alexander\" target=\"_blank\" rel=\"noreferrer\">Alexander, Christopher.</a> <em>The Timeless Way of Building</em> (1979)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Christopher_Alexander\" target=\"_blank\" rel=\"noreferrer\">Alexander, Christopher.</a> <em>A Pattern Language</em> (1977)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Matthew_B._Crawford\" target=\"_blank\" rel=\"noreferrer\">Crawford, Matthew.</a> <em>Shop Class as Soulcraft</em> (2009)</li>\n                <li><a href=\"https://channelmcgilchrist.com/\" target=\"_blank\" rel=\"noreferrer\">McGilchrist, Iain.</a> <em>The Master and His Emissary</em> (2009)</li>\n                <li><a href=\"https://channelmcgilchrist.com/\" target=\"_blank\" rel=\"noreferrer\">McGilchrist, Iain.</a> <em>The Matter with Things</em> (2021)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Henri_Bortoft\" target=\"_blank\" rel=\"noreferrer\">Bortoft, Henri.</a> <em>The Wholeness of Nature</em> (1996)</li>\n                <li><a href=\"https://joshwaitzkin.com/\" target=\"_blank\" rel=\"noreferrer\">Waitzkin, Josh.</a> <em>The Art of Learning</em> (2007)</li>\n                <li><a href=\"https://johnvervaeke.com/\" target=\"_blank\" rel=\"noreferrer\">Vervaeke, John.</a> <em>Awakening from the Meaning Crisis</em> (2019 Lecture Series)</li>\n                <li><a href=\"https://www.penguinrandomhouse.com/authors/2131591/k-anders-ericsson/\" target=\"_blank\" rel=\"noreferrer\">Ericsson, K. Anders.</a> <em>Peak: Secrets from the New Science of Expertise</em> (2016)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Mihaly_Csikszentmihalyi\" target=\"_blank\" rel=\"noreferrer\">Csikszentmihalyi, Mihaly.</a> <em>Flow: The Psychology of Optimal Experience</em> (1990)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Iris_Murdoch\" target=\"_blank\" rel=\"noreferrer\">Murdoch, Iris.</a> <em>The Sovereignty of Good</em> (1970)</li>\n                <li><a href=\"https://en.wikipedia.org/wiki/Hubert_Dreyfus\" target=\"_blank\" rel=\"noreferrer\">Dreyfus, Hubert.</a> <em>Being-in-the-World</em> (1991)</li>\n            </ul>\n        </section>\n\n        <!-- Next Episode -->\n        <div class=\"next-episode\">\n            <h3>Next Season</h3>\n            <p>The Forge — Same voices. Deeper fire. You've learned to see. Now you'll learn to become the one who sees. What transformation demands of you. What practice forges within you. How seeing changes the seer.</p>\n        </div>\n\n        <!-- Footer -->\n        <footer class=\"footer\">\n            <p><strong>Memories from My Future Self</strong></p>\n            <p>Everything I Wish I'd Known Sooner</p>\n            <p><a href=\"https://fromfutureself.com\">fromfutureself.com</a></p>\n        </footer>\n    </div>"
 };
+
+const seasonTwoDescription =
+  "Season 2 traces the architecture of human becoming through creation, questioning, embodiment, attention, boredom, love, contact, humility, play, and the small deaths that make transformation possible.";
+
+const seasonTwoFormat =
+  "Two voices - Alicia from the present and Hector remembering from one hundred years in the future.";
+
+const seasonTwoEpisodes = [
+  {
+    number: "01",
+    title: "You Must Create to Meet Yourself",
+    provocation:
+      "The self does not arrive fully formed before the work begins. The page, the conversation, and the practice are where subject and object emerge together.",
+    summary:
+      "The self doesn't exist before the creative act. Through Pirsig's motorcycle, Dogen's zazen, Aboriginal songlines, and the neuroscience of improvisation, Alicia and Hector explore why the external medium - the page, the conversation, the vault - is where subject and object are born together. You don't find yourself. You make yourself. And the making changes the maker.",
+    thinkers: "Pirsig · McGilchrist · Vervaeke · Copland · Dogen Zenji · Charles Limb",
+    arc:
+      "Season 2 opens at the first act of becoming: the realization that identity is forged through creation rather than discovered whole.",
+    nextTeaser:
+      "Next, the season asks what happens when the vault stops being a storehouse of answers and becomes a discipline of carried questions.",
+  },
+  {
+    number: "02",
+    title: "The Questions You Carry",
+    provocation:
+      "The questions you keep alive determine which parts of reality can become visible to you.",
+    summary:
+      "Feynman kept twelve favorite problems in his head at all times. Rilke told a young poet to live the questions. Heidegger argued that questioning is the fundamental mode of being human. In this episode, Alicia discovers that the vault is not a collection of answers - it's a set of carried questions. And the questions you carry determine which world becomes visible to you.",
+    thinkers: "Feynman · McGilchrist · Pirsig · Rilke · Heidegger · Socrates · Paul Graham",
+    arc:
+      "Once a self is created in practice, it must be oriented. This episode frames questions as the invisible architecture of perception.",
+    nextTeaser:
+      "Then the season moves below explanation itself, into the body's tacit sense for what is true before the mind can justify it.",
+  },
+  {
+    number: "03",
+    title: "The Body Knows Before the Mind Can Say Why",
+    provocation:
+      "Some of your deepest knowledge arrives as posture, breath, recoil, ease, and felt rightness long before it arrives as argument.",
+    summary:
+      "You've felt it - that moment when your body knows something is right before your mind can explain why. Merleau-Ponty called the body \"our medium for having a world.\" Polanyi called it tacit knowing. Pirsig called it Quality. This episode traces the deepest layer of understanding: the pre-intellectual ground where all real knowing lives. The vault didn't just change how Hector thinks. It changed how he breathes.",
+    thinkers: "Pirsig · Merleau-Ponty · Polanyi · Dreyfus · Feldenkrais · Waitzkin · McGilchrist",
+    arc:
+      "Season 2 widens from questions into embodiment, showing that becoming is not merely mental - it is lived through a sensing, situated body.",
+    nextTeaser:
+      "From there, the season turns toward attention itself and asks whether noticing is already a moral choice.",
+  },
+  {
+    number: "04",
+    title: "Attention Is a Moral Act",
+    provocation:
+      "Attention is not neutral. It is the gate through which value, care, and reality itself become actual in a life.",
+    summary:
+      "Simone Weil wrote: \"Attention is the rarest and purest form of generosity.\" Iris Murdoch said moral growth is simply the redirection of attention away from the self. William James argued that attention is the root of will itself. In this episode, a heron on a sandbar teaches a hundred-year-old man what none of them could say alone: attention doesn't observe the world - it renders it. What you attend to is what exists. Everything else is gone.",
+    thinkers: "Simone Weil · McGilchrist · Iris Murdoch · William James · Pirsig · Lavelle · Marcus Aurelius",
+    arc:
+      "Having grounded becoming in body and perception, the season shows that attention is the shaping force that decides what a life is made of.",
+    nextTeaser:
+      "The next episode walks straight into monotony and asks what mastery finds at the center of boredom.",
+  },
+  {
+    number: "05",
+    title: "The Center of Boredom",
+    provocation:
+      "The place where most people quit may be the very threshold where depth, skill, and revelation begin.",
+    summary:
+      "Pascal said all of humanity's problems stem from our inability to sit quietly in a room. Pirsig asked: what is it at the very center of boredom that you're not seeing? This episode walks into the place where most people quit - the threshold of monotony - and discovers that mastery doesn't transcend boredom. It discovers that at the center of boredom is everything you've been looking for.",
+    thinkers: "Pirsig · Pascal · Agnes Callard · Csikszentmihalyi · Waitzkin",
+    arc:
+      "Season 2 now tests the self it has been building, arguing that transformation requires endurance at the exact point where novelty disappears.",
+    nextTeaser:
+      "After boredom comes relationship: the demand to love another person without freezing them into an earlier version of themselves.",
+  },
+  {
+    number: "06",
+    title: "Loving Someone as They Change",
+    provocation:
+      "Real love is not attachment to a fixed identity. It is the willingness to keep meeting the person who is arriving.",
+    summary:
+      "The hardest practice isn't meditation or discipline - it's loving someone as they become someone new. Through Buber's I-Thou encounter, Fromm's being mode, L.A. Paul's transformative experience, and Esther Perel's insight that otherness is the fuel of desire, Alicia and Hector explore love as the daily choice to attend a thousand funerals of who someone used to be - and meet who they actually are.",
+    thinkers: "Martin Buber · Erich Fromm · L.A. Paul · Esther Perel · Heidi Priebe · Marcus Aurelius",
+    arc:
+      "The season carries becoming into intimacy, where change stops being abstract and becomes a daily ethical and relational discipline.",
+    nextTeaser:
+      "Next comes the question of what really compounds in a life: not duration, but the density of contact with what resists you.",
+  },
+  {
+    number: "07",
+    title: "The Density of Contact",
+    provocation:
+      "A life is not measured best by how long it lasts, but by how often it truly meets resistance, reality, and otherness.",
+    summary:
+      "We measure life in years. But the real biography is written in moments of genuine contact - encounters dense enough to change you. Taleb's antifragility, Waitzkin's growth at the point of resistance, and Seneca's warning about wasted time converge on one insight: what compounds is not duration but the density of encounter with what resists you. One real conversation outweighs a thousand comfortable ones.",
+    thinkers: "Nassim Taleb · Waitzkin · James Clear · Reed Montague · Seneca · Steinbeck",
+    arc:
+      "By midseason, becoming is defined less by abstraction and more by contact - those concentrated encounters that actually alter the person having them.",
+    nextTeaser:
+      "Then the season asks what makes such contact possible in the first place: the humility to remain open enough to be changed.",
+  },
+  {
+    number: "08",
+    title: "The Porosity of Humility",
+    provocation:
+      "Humility is not self-erasure. It is permeability - the capacity to be reached by reality instead of defended from it.",
+    summary:
+      "Humility is not smallness. It's porosity - the capacity to be reached and changed by the world. Keats called it Negative Capability: remaining in uncertainties without irritable reaching after fact and reason. Borges turned his humiliations into literature. In this episode, Hector discovers that ego doesn't make you stronger. It shrinks the surface area through which reality can touch you.",
+    thinkers: "John Keats · Jorge Luis Borges · McGilchrist · Austin Osman Spare · Nishitani",
+    arc:
+      "Season 2 reveals humility as structural, not sentimental: the condition that lets transformation keep happening instead of hardening into persona.",
+    nextTeaser:
+      "With humility in place, the season can finally turn toward play and show why structure is not the enemy of freedom but its condition.",
+  },
+  {
+    number: "09",
+    title: "The Fence and the Yard",
+    provocation:
+      "Freedom does not arise from the absence of form. It arises when form becomes the enabling boundary for discovery and improvisation.",
+    summary:
+      "Nietzsche wrote that maturity is recovering the seriousness you had as a child at play. Winnicott showed that creativity is born in the transitional space between self and world. Huizinga argued that play is the foundation of all culture. Miles Davis proved that the deepest improvisation requires the deepest discipline. The fence doesn't restrict the yard. The fence makes the yard possible.",
+    thinkers: "Nietzsche · Winnicott · Huizinga · Csikszentmihalyi · Miles Davis",
+    arc:
+      "The season's penultimate move reframes discipline as generative, showing that the right constraints make vitality, culture, and improvisation possible.",
+    nextTeaser:
+      "The finale gathers every thread and asks what all real learning costs: a sequence of beautiful, necessary deaths.",
+  },
+  {
+    number: "10",
+    title: "Every Real Learning Is a Small Death",
+    provocation:
+      "To become someone new, some prior certainty, identity, or way of seeing has to die with dignity.",
+    summary:
+      "The season finale. Kuhn showed that paradigm shifts require crisis. Callard showed that aspiration means acting toward values you don't yet possess. Barfield showed that consciousness moves through three stages - original participation, alienation, and final participation. Every episode this season has been a small death: of the uncreated self, of certainty, of the mind's dominance, of inattention, of comfort, of possession, of shallow time, of ego, of seriousness, and now - of the learner who began this season. The vault is both cemetery and maternity ward. Willingness to die beautifully is the fundamental skill.",
+    thinkers: "Thomas Kuhn · Agnes Callard · Owen Barfield · Vervaeke · Pirsig · Waitzkin",
+    arc:
+      "The finale names the hidden cost of every prior episode: becoming is inseparable from surrender, crisis, and the graceful death of an earlier self.",
+    nextTeaser:
+      "Season 2 closes here, with the learner remade by the very practices that first seemed to threaten who they were.",
+  },
+];
+
+const buildSeasonTwoEpisode = (episode) => `
+  <header class="podcast-header">
+    <div class="podcast-name">Memories from My Future Self</div>
+    <h1 class="episode-title">${episode.title}</h1>
+    <div class="episode-subtitle">Season 2, Episode ${Number(episode.number)} - The Architecture of Becoming</div>
+    <div class="episode-meta">Everything I wish I'd known sooner</div>
+    <div class="season-name">${seasonTwoFormat}</div>
+  </header>
+
+  <div class="provocation">
+    <div class="provocation-label">Season Premise</div>
+    <p>${episode.provocation}</p>
+  </div>
+
+  <section class="episode-summary">
+    <h2 class="section-title">What This Episode Is About</h2>
+    <p>${episode.summary}</p>
+    <p>${seasonTwoDescription}</p>
+  </section>
+
+  <section class="key-ideas">
+    <h2 class="section-title">Why It Matters</h2>
+    <div class="key-idea">
+      <strong>Season Arc</strong> - ${episode.arc}
+    </div>
+    <div class="key-idea">
+      <strong>Thinkers</strong> - ${episode.thinkers}
+    </div>
+  </section>
+
+  <section class="sources">
+    <h2 class="section-title">Season Context</h2>
+    <div class="source-card">
+      <div class="author">Season 2</div>
+      <div class="title">The Architecture of Becoming</div>
+      <div class="description">${seasonTwoDescription}</div>
+    </div>
+    <div class="source-card">
+      <div class="author">Format</div>
+      <div class="title">Two voices across time</div>
+      <div class="description">${seasonTwoFormat}</div>
+    </div>
+  </section>
+
+  <div class="next-episode">
+    <h3>Next Episode</h3>
+    <p>${episode.nextTeaser}</p>
+  </div>
+
+  <footer class="footer">
+    <p><strong>Memories from My Future Self</strong></p>
+    <p>Everything I Wish I'd Known Sooner</p>
+    <p><a href="https://fromfutureself.com">fromfutureself.com</a></p>
+  </footer>
+`;
+
+window.SEASON_NOTES = {
+  "1": window.NOTES_DATA,
+  "2": Object.fromEntries(
+    seasonTwoEpisodes.map((episode) => [episode.number, buildSeasonTwoEpisode(episode)])
+  ),
+};

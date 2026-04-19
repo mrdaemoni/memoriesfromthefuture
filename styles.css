@@ -281,6 +281,27 @@ body {
   padding: 0 1.8rem 0 5.25rem;
 }
 
+.season-menu-group {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.season-menu-group-title {
+  color: #887d88;
+  font-family: "Libre Bodoni", serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.season-menu-links {
+  display: grid;
+  gap: 1rem;
+}
+
 .season-menu-panel a {
   text-decoration: none;
   font-size: 18px;
@@ -717,6 +738,14 @@ body {
   .season-menu-panel {
     gap: 1rem;
     padding: 0 1rem 0 3.7rem;
+  }
+
+  .season-menu-group {
+    gap: 0.65rem;
+  }
+
+  .season-menu-links {
+    gap: 0.85rem;
   }
 
   .notes-hero,
