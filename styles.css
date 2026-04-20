@@ -135,6 +135,18 @@ body.has-episode-modal {
   animation-duration: 9.6s;
 }
 
+.site-intro {
+  width: min(760px, calc(100vw - 2.5rem));
+  margin: 1.3rem auto 0;
+  color: #726570;
+  font-family: "Libre Bodoni", serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+}
+
 .content-section {
   position: relative;
   min-height: 65vh;
@@ -163,9 +175,7 @@ body.has-episode-modal {
 .episodes-copy,
 .episode-browse-number,
 .episode-browse-title,
-.episode-browse-description,
-.episode-browse-listen,
-.episode-browse-more {
+.episode-browse-description {
   font-family: "Libre Bodoni", serif;
 }
 
@@ -203,11 +213,15 @@ body.has-episode-modal {
   flex-direction: column;
   justify-content: space-between;
   color: #fffaf7;
-  background-color: #1f171f;
-  background-image: var(--episode-image);
-  background-size: cover;
-  background-position: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04)),
+    rgba(31, 23, 31, 0.08);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 0 1px rgba(255, 250, 247, 0.12),
+    0 0 26px rgba(255, 250, 255, 0.24);
   isolation: isolate;
+  cursor: pointer;
   transition:
     transform 220ms ease,
     box-shadow 220ms ease,
@@ -217,31 +231,49 @@ body.has-episode-modal {
 .episode-browse-card::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -16px;
   z-index: -2;
-  background:
-    linear-gradient(180deg, rgba(10, 8, 13, 0.16) 0%, rgba(10, 8, 13, 0.5) 44%, rgba(10, 8, 13, 0.9) 100%),
-    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.18), transparent 40%);
+  background: var(--episode-image) var(--episode-image-position, center center) / cover no-repeat;
+  filter: blur(8px) saturate(0.92) contrast(1.02);
+  transform: scale(var(--episode-image-scale, 1.12));
+  transition:
+    filter 220ms ease,
+    transform 220ms ease;
 }
 
 .episode-browse-card::after {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -10px;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 22%, rgba(14, 10, 18, 0.16) 52%, rgba(14, 10, 18, 0.76) 100%),
+    radial-gradient(circle at 50% -8%, rgba(255, 255, 255, 0.22), transparent 42%);
+  filter: blur(8px);
+  opacity: 0.92;
 }
 
-.episode-browse-card:hover {
+.episode-browse-card:hover,
+.episode-browse-card:focus-within {
   transform: translateY(-4px);
-  box-shadow: 0 18px 44px rgba(27, 19, 30, 0.18);
+  box-shadow:
+    0 0 0 1px rgba(255, 250, 247, 0.18),
+    0 18px 44px rgba(27, 19, 30, 0.16),
+    0 0 32px rgba(255, 250, 255, 0.12);
+}
+
+.episode-browse-card:hover::before,
+.episode-browse-card:focus-within::before {
+  filter: blur(0px) saturate(0.98) contrast(1.04);
+  transform: scale(calc(var(--episode-image-scale, 1.12) * 1.02));
 }
 
 .episode-browse-card.is-featured {
   transform: translateY(-4px) scale(1.015);
   box-shadow:
-    0 20px 54px rgba(27, 19, 30, 0.24),
-    0 0 0 1px rgba(255, 250, 247, 0.2);
+    0 20px 54px rgba(27, 19, 30, 0.18),
+    0 0 0 1px rgba(255, 250, 247, 0.18),
+    0 0 28px rgba(255, 250, 255, 0.16);
 }
 
 .episode-browse-card.is-featured::after {
@@ -251,21 +283,21 @@ body.has-episode-modal {
 }
 
 .episode-browse-card.is-featured .episode-browse-number,
-.episode-browse-card.is-featured .episode-browse-title,
-.episode-browse-card.is-featured .episode-browse-listen {
+.episode-browse-card.is-featured .episode-browse-title {
   text-shadow: 0 0 22px rgba(255, 250, 247, 0.16);
 }
 
 .episode-browse-card.is-current {
   box-shadow:
-    0 20px 54px rgba(27, 19, 30, 0.24),
-    0 0 0 1px rgba(255, 250, 247, 0.24);
+    0 20px 54px rgba(27, 19, 30, 0.18),
+    0 0 0 1px rgba(255, 250, 247, 0.22),
+    0 0 28px rgba(255, 250, 255, 0.16);
 }
 
 .episode-browse-top,
 .episode-browse-body {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .episode-browse-top {
@@ -307,56 +339,19 @@ body.has-episode-modal {
   color: rgba(255, 250, 247, 0.88);
 }
 
-.episode-browse-listen {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin-top: 0.3rem;
-  padding: 0.82rem 1.45rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
-  color: #fffaf7;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1;
-  backdrop-filter: blur(10px);
+.episode-browse-open {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
-.episode-browse-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-}
-
-.episode-browse-listen,
-.episode-browse-more {
-  text-decoration: none;
-}
-
-.episode-browse-more {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  padding: 0.82rem 1.45rem;
-  border-radius: 999px;
-  background: rgba(13, 10, 16, 0.32);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
-  color: rgba(255, 250, 247, 0.92);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1;
-  backdrop-filter: blur(10px);
-}
-
-.episode-browse-more.is-current {
-  cursor: default;
-  background: rgba(255, 250, 247, 0.22);
-  color: #fffaf7;
+.episode-browse-open:focus-visible {
+  outline: 2px solid rgba(255, 250, 247, 0.92);
+  outline-offset: -2px;
 }
 
 .episodes-empty {
@@ -408,7 +403,7 @@ body.has-episode-modal {
   max-height: calc(100vh - 6rem);
   overflow: auto;
   padding: 1rem;
-  border-radius: 28px;
+  border-radius: 24px;
   background: rgba(255, 255, 255, 0.96);
   box-shadow:
     0 28px 80px rgba(24, 18, 28, 0.12),
@@ -432,11 +427,11 @@ body.has-episode-modal {
 
 .episode-modal-close {
   position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
+  top: 1rem;
+  right: 1rem;
   z-index: 2;
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 3rem;
+  height: 3rem;
   border: 0;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.98);
@@ -625,7 +620,7 @@ body.has-episode-modal {
   inset: 0;
   background:
     linear-gradient(115deg, rgba(14, 10, 18, 0.7), rgba(14, 10, 18, 0.24)),
-    var(--episode-hero-image) center / cover no-repeat;
+    var(--episode-hero-image) var(--episode-hero-position, center center) / var(--episode-hero-size, 118% auto) no-repeat;
   filter: saturate(0.95) contrast(1.05);
 }
 
@@ -671,6 +666,25 @@ body.has-episode-modal {
   line-height: 1.35;
 }
 
+.episode-page-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 1.05rem;
+}
+
+.episode-page-pagination-link {
+  color: rgba(255, 250, 247, 0.9);
+  font-family: "Libre Bodoni", serif;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.episode-page-pagination-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
 .episode-page-audio {
   align-self: start;
   width: 100%;
@@ -710,7 +724,12 @@ body.has-episode-modal {
 }
 
 .episode-page-story {
-  margin-top: 100px;
+  margin-top: 40px;
+}
+
+.episode-page-thinkers,
+.episode-page-library {
+  margin-top: 60px;
 }
 
 .episode-thinker-grid {
@@ -729,36 +748,60 @@ body.has-episode-modal {
   border-radius: 18px;
   text-decoration: none;
   background:
-    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.14), transparent 26%),
-    linear-gradient(160deg, rgba(34, 24, 35, 0.92), rgba(17, 12, 18, 0.98));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04)),
+    rgba(31, 23, 31, 0.08);
+  backdrop-filter: blur(12px);
   box-shadow:
-    0 18px 48px rgba(32, 22, 34, 0.18),
-    inset 0 0 0 1px rgba(255, 250, 247, 0.08);
+    0 0 0 1px rgba(255, 250, 247, 0.12),
+    0 0 24px rgba(255, 250, 255, 0.2);
   isolation: isolate;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
 }
 
 .episode-thinker-card::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -14px;
   z-index: -2;
   background:
-    linear-gradient(180deg, rgba(14, 10, 18, 0.03), rgba(14, 10, 18, 0.58)),
+    linear-gradient(180deg, rgba(14, 10, 18, 0.04), rgba(14, 10, 18, 0.56)),
     var(--thinker-image, linear-gradient(180deg, rgba(115, 99, 112, 0.24), rgba(44, 30, 47, 0.88)));
   background-size: cover;
   background-position: center;
-  filter: grayscale(0.92) sepia(0.18) contrast(1.02) brightness(1.02);
-  transform: scale(1.02);
+  filter: blur(8px) grayscale(0.9) sepia(0.18) contrast(1.02) brightness(1.02);
+  transform: scale(1.08);
+  transition:
+    filter 220ms ease,
+    transform 220ms ease;
 }
 
 .episode-thinker-card::after {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -8px;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0)),
-    linear-gradient(180deg, rgba(12, 9, 15, 0) 0%, rgba(12, 9, 15, 0.3) 58%, rgba(12, 9, 15, 0.68) 100%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.03)),
+    linear-gradient(180deg, rgba(12, 9, 15, 0) 0%, rgba(12, 9, 15, 0.28) 58%, rgba(12, 9, 15, 0.66) 100%);
+  filter: blur(8px);
+  opacity: 0.92;
+}
+
+.episode-thinker-card:hover,
+.episode-thinker-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 1px rgba(255, 250, 247, 0.16),
+    0 16px 36px rgba(32, 22, 34, 0.14),
+    0 0 28px rgba(255, 250, 255, 0.14);
+}
+
+.episode-thinker-card:hover::before,
+.episode-thinker-card:focus-visible::before {
+  filter: blur(0px) grayscale(0.88) sepia(0.16) contrast(1.04) brightness(1.03);
+  transform: scale(1.1);
 }
 
 .episode-thinker-media {
@@ -784,11 +827,7 @@ body.has-episode-modal {
 }
 
 .episode-page-library-grid {
-  margin-top: 0;
-}
-
-.episode-page-library {
-  margin-top: 100px;
+  margin-top: 0.8rem;
 }
 
 .season-menu {
@@ -1295,6 +1334,13 @@ body.has-episode-modal {
     font-size: 24px;
   }
 
+  .site-intro {
+    width: min(100%, 38rem);
+    margin-top: 1rem;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
   .section-card {
     padding: 1.8rem 1.35rem;
   }
@@ -1311,8 +1357,8 @@ body.has-episode-modal {
   }
 
   .episode-modal-close {
-    top: 0.95rem;
-    right: 0.95rem;
+    top: 0.75rem;
+    right: 0.75rem;
     width: 2.55rem;
     height: 2.55rem;
     border-radius: 999px;
@@ -1369,6 +1415,15 @@ body.has-episode-modal {
     font-size: 18px;
   }
 
+  .episode-page-pagination {
+    gap: 0.9rem 1rem;
+    margin-top: 0.9rem;
+  }
+
+  .episode-page-pagination-link {
+    font-size: 15px;
+  }
+
   .episode-thinker-grid {
     grid-template-columns: 1fr;
   }
@@ -1379,9 +1434,13 @@ body.has-episode-modal {
     margin-right: 0;
   }
 
-  .episode-page-story,
+  .episode-page-story {
+    margin-top: 24px;
+  }
+
+  .episode-page-thinkers,
   .episode-page-library {
-    margin-top: 56px;
+    margin-top: 36px;
   }
 
   .episodes-grid {
@@ -1423,16 +1482,6 @@ body.has-episode-modal {
 
   .episode-thinker-name {
     font-size: 16px;
-  }
-
-  .episode-browse-actions {
-    gap: 0.45rem;
-  }
-
-  .episode-browse-listen,
-  .episode-browse-more {
-    padding: 0.58rem 0.8rem;
-    font-size: 13px;
   }
 
   .notes-shell {

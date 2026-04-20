@@ -17,6 +17,8 @@ const episodeCatalog = [
     description:
       "The self is made in the act of creation, not discovered before it.",
     image: "art/s2/1.png",
+    imagePosition: "center center",
+    imageScale: "1.2",
     listenUrl: "https://open.spotify.com/episode/7AOU64AKrN2w7w1XFFIsr1",
   },
   {
@@ -53,6 +55,8 @@ const episodeCatalog = [
     description:
       "Mastery begins where boredom stops being something to escape.",
     image: "art/s2/5.png",
+    imagePosition: "center center",
+    imageScale: "1.18",
     listenUrl: "https://open.spotify.com/episode/5xWPHhy1ojPbfjUIora6g0",
   },
   {
@@ -62,6 +66,8 @@ const episodeCatalog = [
     description:
       "Love means meeting someone as they keep becoming someone new.",
     image: "art/s2/6.png",
+    imagePosition: "center center",
+    imageScale: "1.18",
     listenUrl: "https://open.spotify.com/episode/4PEsI9y7SXu6PkfkSMqYQR",
   },
   {
@@ -89,6 +95,10 @@ const episodeCatalog = [
     description:
       "Constraint makes play possible; the fence gives the yard its freedom.",
     image: "art/s2/9.png",
+    imagePosition: "center center",
+    imageScale: "1.2",
+    heroImagePosition: "center center",
+    heroImageSize: "128% auto",
     listenUrl: spotifyShowUrl,
   },
   {
@@ -405,29 +415,22 @@ const renderEpisodeBrowseCards = (currentEpisode = null) =>
           class="episode-browse-card${episode.episode === "08" ? " is-featured" : ""}${
             currentEpisode === episode.episode ? " is-current" : ""
           }"
-          style="--episode-image: url('${episode.image}')"
+          style="--episode-image: url('${episode.image}'); --episode-image-position: ${
+            episode.imagePosition || "center center"
+          }; --episode-image-scale: ${episode.imageScale || "1.12"}"
         >
+          <button
+            type="button"
+            class="episode-browse-open"
+            data-open-episode="${episode.episode}"
+            aria-label="Open details for ${episode.title}"
+          ></button>
           <div class="episode-browse-top">
             <p class="episode-browse-number">#${episode.displayNumber}</p>
           </div>
           <div class="episode-browse-body">
             <h3 class="episode-browse-title">${episode.title}</h3>
             <p class="episode-browse-description">${episode.description}</p>
-            <div class="episode-browse-actions">
-              <a
-                class="episode-browse-listen"
-                href="${episode.listenUrl}"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Listen
-              </a>
-              ${
-                currentEpisode === episode.episode
-                  ? '<span class="episode-browse-more is-current">Current</span>'
-                  : `<a class="episode-browse-more" href="${episode.pageUrl}" data-open-episode="${episode.episode}">More</a>`
-              }
-            </div>
           </div>
         </article>
       `
@@ -450,6 +453,46 @@ const updateEpisodeQuery = (episodeKey) => {
   window.history.replaceState({}, "", url);
 };
 
+const buildEpisodePaginationMarkup = (episodeKey) => {
+  const currentIndex = episodeCatalog.findIndex((episode) => episode.episode === episodeKey);
+  const previousEpisode = currentIndex > 0 ? episodeCatalog[currentIndex - 1] : null;
+  const nextEpisode =
+    currentIndex >= 0 && currentIndex < episodeCatalog.length - 1
+      ? episodeCatalog[currentIndex + 1]
+      : null;
+
+  if (!previousEpisode && !nextEpisode) {
+    return "";
+  }
+
+  return `
+    <div class="episode-page-pagination">
+      ${
+        previousEpisode
+          ? `<a
+              class="episode-page-pagination-link"
+              href="${previousEpisode.pageUrl}"
+              data-open-episode="${previousEpisode.episode}"
+            >
+              Previous episode
+            </a>`
+          : ""
+      }
+      ${
+        nextEpisode
+          ? `<a
+              class="episode-page-pagination-link"
+              href="${nextEpisode.pageUrl}"
+              data-open-episode="${nextEpisode.episode}"
+            >
+              Next episode
+            </a>`
+          : ""
+      }
+    </div>
+  `;
+};
+
 const setEpisodeModalMarkup = (episodeKey) => {
   if (!episodeModalContent) {
     return null;
@@ -459,10 +502,11 @@ const setEpisodeModalMarkup = (episodeKey) => {
     getEpisodeDetailData(episodeKey);
 
   episodeModalContent.innerHTML = `
-    <article class="episode-page-hero" style="--episode-hero-image: url('${episodeMeta.image}')">
+    <article class="episode-page-hero" style="--episode-hero-image: url('${episodeMeta.image}'); --episode-hero-position: ${episodeMeta.heroImagePosition || "center center"}; --episode-hero-size: ${episodeMeta.heroImageSize || "118% auto"};">
       <div class="episode-page-hero-inner">
         <h1 class="episode-page-title" id="episode-modal-title">#${episodeMeta.displayNumber} - ${episodeMeta.title}</h1>
         <p class="episode-page-dek">${episodeMeta.description}</p>
+        ${buildEpisodePaginationMarkup(safeEpisode)}
       </div>
       <div class="episode-page-audio">
         <iframe
@@ -491,6 +535,7 @@ const setEpisodeModalMarkup = (episodeKey) => {
     </section>
 
     <section class="episode-page-panel episode-page-library">
+      <div class="episode-page-panel-label">Episodes</div>
       <div class="episodes-grid episode-page-library-grid">
         ${renderEpisodeBrowseCards(safeEpisode)}
       </div>
