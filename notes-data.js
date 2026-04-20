@@ -21,8 +21,8 @@ const seasonTwoEpisodes = [
     provocation:
       "The self does not arrive fully formed before the work begins. The page, the conversation, and the practice are where subject and object emerge together.",
     summary:
-      "The self doesn't exist before the creative act. Through Pirsig's motorcycle, Dogen's zazen, Aboriginal songlines, and the neuroscience of improvisation, Alicia and Hector explore why the external medium - the page, the conversation, the vault - is where subject and object are born together. You don't find yourself. You make yourself. And the making changes the maker.",
-    thinkers: "Pirsig · McGilchrist · Vervaeke · Copland · Dogen Zenji · Charles Limb",
+      "The self doesn't exist before the creative act. Through Pirsig's motorcycle, Dōgen's zazen, Aboriginal songlines, and the neuroscience of improvisation, Alicia and Hector explore why the external medium — the page, the conversation, the vault — is where subject and object are born together. You don't find yourself. You make yourself. And the making changes the maker.",
+    thinkers: "Pirsig · McGilchrist · Vervaeke · Copland · Dōgen Zenji · Charles Limb",
     arc:
       "Season 2 opens at the first act of becoming: the realization that identity is forged through creation rather than discovered whole.",
     nextTeaser:
@@ -34,7 +34,7 @@ const seasonTwoEpisodes = [
     provocation:
       "The questions you keep alive determine which parts of reality can become visible to you.",
     summary:
-      "Feynman kept twelve favorite problems in his head at all times. Rilke told a young poet to live the questions. Heidegger argued that questioning is the fundamental mode of being human. In this episode, Alicia discovers that the vault is not a collection of answers - it's a set of carried questions. And the questions you carry determine which world becomes visible to you.",
+      "Feynman kept twelve favorite problems in his head at all times. Rilke told a young poet to live the questions. Heidegger argued that questioning is the fundamental mode of being human. In this episode, Alicia discovers that the vault is not a collection of answers — it's a set of carried questions. And the questions you carry determine which world becomes visible to you.",
     thinkers: "Feynman · McGilchrist · Pirsig · Rilke · Heidegger · Socrates · Paul Graham",
     arc:
       "Once a self is created in practice, it must be oriented. This episode frames questions as the invisible architecture of perception.",
@@ -47,7 +47,7 @@ const seasonTwoEpisodes = [
     provocation:
       "Some of your deepest knowledge arrives as posture, breath, recoil, ease, and felt rightness long before it arrives as argument.",
     summary:
-      "You've felt it - that moment when your body knows something is right before your mind can explain why. Merleau-Ponty called the body \"our medium for having a world.\" Polanyi called it tacit knowing. Pirsig called it Quality. This episode traces the deepest layer of understanding: the pre-intellectual ground where all real knowing lives. The vault didn't just change how Hector thinks. It changed how he breathes.",
+      "You've felt it — that moment when your body knows something is right before your mind can explain why. Merleau-Ponty called the body \"our medium for having a world.\" Polanyi called it tacit knowing. Pirsig called it Quality. This episode traces the deepest layer of understanding: the pre-intellectual ground where all real knowing lives. The vault didn't just change how Hector thinks. It changed how he breathes.",
     thinkers: "Pirsig · Merleau-Ponty · Polanyi · Dreyfus · Feldenkrais · Waitzkin · McGilchrist",
     arc:
       "Season 2 widens from questions into embodiment, showing that becoming is not merely mental - it is lived through a sensing, situated body.",
@@ -60,7 +60,7 @@ const seasonTwoEpisodes = [
     provocation:
       "Attention is not neutral. It is the gate through which value, care, and reality itself become actual in a life.",
     summary:
-      "Simone Weil wrote: \"Attention is the rarest and purest form of generosity.\" Iris Murdoch said moral growth is simply the redirection of attention away from the self. William James argued that attention is the root of will itself. In this episode, a heron on a sandbar teaches a hundred-year-old man what none of them could say alone: attention doesn't observe the world - it renders it. What you attend to is what exists. Everything else is gone.",
+      "Simone Weil wrote: \"Attention is the rarest and purest form of generosity.\" Iris Murdoch said moral growth is simply the redirection of attention away from the self. William James argued that attention is the root of will itself. In this episode, a heron on a sandbar teaches a hundred-year-old man what none of them could say alone: attention doesn't observe the world — it renders it. What you attend to is what exists. Everything else is gone.",
     thinkers: "Simone Weil · McGilchrist · Iris Murdoch · William James · Pirsig · Lavelle · Marcus Aurelius",
     arc:
       "Having grounded becoming in body and perception, the season shows that attention is the shaping force that decides what a life is made of.",
@@ -73,7 +73,7 @@ const seasonTwoEpisodes = [
     provocation:
       "The place where most people quit may be the very threshold where depth, skill, and revelation begin.",
     summary:
-      "Pascal said all of humanity's problems stem from our inability to sit quietly in a room. Pirsig asked: what is it at the very center of boredom that you're not seeing? This episode walks into the place where most people quit - the threshold of monotony - and discovers that mastery doesn't transcend boredom. It discovers that at the center of boredom is everything you've been looking for.",
+      "Pascal said all of humanity's problems stem from our inability to sit quietly in a room. Pirsig asked: what is it at the very center of boredom that you're not seeing? This episode walks into the place where most people quit — the threshold of monotony — and discovers that mastery doesn't transcend boredom. It discovers that at the center of boredom is everything you've been looking for.",
     thinkers: "Pirsig · Pascal · Agnes Callard · Csikszentmihalyi · Waitzkin",
     arc:
       "Season 2 now tests the self it has been building, arguing that transformation requires endurance at the exact point where novelty disappears.",
@@ -86,7 +86,7 @@ const seasonTwoEpisodes = [
     provocation:
       "Real love is not attachment to a fixed identity. It is the willingness to keep meeting the person who is arriving.",
     summary:
-      "The hardest practice isn't meditation or discipline - it's loving someone as they become someone new. Through Buber's I-Thou encounter, Fromm's being mode, L.A. Paul's transformative experience, and Esther Perel's insight that otherness is the fuel of desire, Alicia and Hector explore love as the daily choice to attend a thousand funerals of who someone used to be - and meet who they actually are.",
+      "The hardest practice isn't meditation or discipline — it's loving someone as they become someone new. Through Buber's I-Thou encounter, Fromm's being mode, L.A. Paul's transformative experience, and Esther Perel's insight that otherness is the fuel of desire, Alicia and Hector explore love as the daily choice to attend a thousand funerals of who someone used to be — and meet who they actually are.",
     thinkers: "Martin Buber · Erich Fromm · L.A. Paul · Esther Perel · Heidi Priebe · Marcus Aurelius",
     arc:
       "The season carries becoming into intimacy, where change stops being abstract and becomes a daily ethical and relational discipline.",
@@ -99,7 +99,7 @@ const seasonTwoEpisodes = [
     provocation:
       "A life is not measured best by how long it lasts, but by how often it truly meets resistance, reality, and otherness.",
     summary:
-      "We measure life in years. But the real biography is written in moments of genuine contact - encounters dense enough to change you. Taleb's antifragility, Waitzkin's growth at the point of resistance, and Seneca's warning about wasted time converge on one insight: what compounds is not duration but the density of encounter with what resists you. One real conversation outweighs a thousand comfortable ones.",
+      "We measure life in years. But the real biography is written in moments of genuine contact — encounters dense enough to change you. Taleb's antifragility, Waitzkin's growth at the point of resistance, and Seneca's warning about wasted time converge on one insight: what compounds is not duration but the density of encounter with what resists you. One real conversation outweighs a thousand comfortable ones.",
     thinkers: "Nassim Taleb · Waitzkin · James Clear · Reed Montague · Seneca · Steinbeck",
     arc:
       "By midseason, becoming is defined less by abstraction and more by contact - those concentrated encounters that actually alter the person having them.",
@@ -112,7 +112,7 @@ const seasonTwoEpisodes = [
     provocation:
       "Humility is not self-erasure. It is permeability - the capacity to be reached by reality instead of defended from it.",
     summary:
-      "Humility is not smallness. It's porosity - the capacity to be reached and changed by the world. Keats called it Negative Capability: remaining in uncertainties without irritable reaching after fact and reason. Borges turned his humiliations into literature. In this episode, Hector discovers that ego doesn't make you stronger. It shrinks the surface area through which reality can touch you.",
+      "Humility is not smallness. It's porosity — the capacity to be reached and changed by the world. Keats called it Negative Capability: remaining in uncertainties without irritable reaching after fact and reason. Borges turned his humiliations into literature. In this episode, Hector discovers that ego doesn't make you stronger. It shrinks the surface area through which reality can touch you.",
     thinkers: "John Keats · Jorge Luis Borges · McGilchrist · Austin Osman Spare · Nishitani",
     arc:
       "Season 2 reveals humility as structural, not sentimental: the condition that lets transformation keep happening instead of hardening into persona.",
@@ -138,7 +138,7 @@ const seasonTwoEpisodes = [
     provocation:
       "To become someone new, some prior certainty, identity, or way of seeing has to die with dignity.",
     summary:
-      "The season finale. Kuhn showed that paradigm shifts require crisis. Callard showed that aspiration means acting toward values you don't yet possess. Barfield showed that consciousness moves through three stages - original participation, alienation, and final participation. Every episode this season has been a small death: of the uncreated self, of certainty, of the mind's dominance, of inattention, of comfort, of possession, of shallow time, of ego, of seriousness, and now - of the learner who began this season. The vault is both cemetery and maternity ward. Willingness to die beautifully is the fundamental skill.",
+      "The season finale. Kuhn showed that paradigm shifts require crisis. Callard showed that aspiration means acting toward values you don't yet possess. Barfield showed that consciousness moves through three stages — original participation, alienation, and final participation. Every episode this season has been a small death: of the uncreated self, of certainty, of the mind's dominance, of inattention, of comfort, of possession, of shallow time, of ego, of seriousness, and now — of the learner who began this season. The vault is both cemetery and maternity ward. Willingness to die beautifully is the fundamental skill.",
     thinkers: "Thomas Kuhn · Agnes Callard · Owen Barfield · Vervaeke · Pirsig · Waitzkin",
     arc:
       "The finale names the hidden cost of every prior episode: becoming is inseparable from surrender, crisis, and the graceful death of an earlier self.",
