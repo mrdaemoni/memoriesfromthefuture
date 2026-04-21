@@ -108,7 +108,7 @@ const episodeCatalog = [
     description:
       "Every transformation asks an older self to die beautifully.",
     image: "art/s2/10.png",
-    listenUrl: spotifyShowUrl,
+    listenUrl: "https://open.spotify.com/episode/0axGwWd9p8A89l8QoFhdub",
   },
 ].map((episode) => ({
   ...episode,
