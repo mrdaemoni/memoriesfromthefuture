@@ -137,7 +137,7 @@ body.has-episode-modal {
 
 .site-intro {
   width: min(760px, calc(100vw - 2.5rem));
-  margin: 1.3rem auto 0;
+  margin: 2.55rem auto 1.25rem;
   color: #726570;
   font-family: "Libre Bodoni", serif;
   font-size: 19px;
@@ -1336,7 +1336,7 @@ body.has-episode-modal {
 
   .site-intro {
     width: min(100%, 38rem);
-    margin-top: 1rem;
+    margin: 1.8rem auto 1rem;
     font-size: 16px;
     line-height: 1.45;
   }
