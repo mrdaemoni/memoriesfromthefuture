@@ -91,6 +91,7 @@ const episodeCatalog = [
   {
     season: "2",
     episode: "09",
+    seasonEpisode: "09",
     title: "The Fence and the Yard",
     description:
       "Constraint makes play possible; the fence gives the yard its freedom.",
@@ -99,23 +100,107 @@ const episodeCatalog = [
     imageScale: "1.2",
     heroImagePosition: "center center",
     heroImageSize: "128% auto",
-    listenUrl: spotifyShowUrl,
+    listenUrl: "https://open.spotify.com/episode/7pAOWMWdidFW4UoBmQFqiJ",
   },
   {
     season: "2",
     episode: "10",
+    seasonEpisode: "10",
     title: "Every Real Learning Is a Small Death",
     description:
       "Every transformation asks an older self to die beautifully.",
     image: "art/s2/10.png",
     listenUrl: "https://open.spotify.com/episode/0axGwWd9p8A89l8QoFhdub",
   },
+  {
+    season: "6",
+    episode: "11",
+    seasonEpisode: "01",
+    title: "The Sound of Your Frame Breaking",
+    description:
+      "The deepest ignorance is often the frame you do not know you are inside.",
+    image: "art/s3/1-sound-of-your-frame-breaking.png",
+    listenUrl: "https://open.spotify.com/episode/4Wqw2RcxcLsTyxsWb9NsD4",
+  },
+  {
+    season: "6",
+    episode: "12",
+    seasonEpisode: "02",
+    title: "There's a Space Between Left and Right That's Right",
+    description:
+      "The path of quality runs through the subtle interval between two simplicities.",
+    image: "art/s3/2-space-between-spaces.png",
+    listenUrl: "https://open.spotify.com/episode/2oriUYIfA3yhPyDMwuVo4e",
+  },
+  {
+    season: "6",
+    episode: "13",
+    seasonEpisode: "03",
+    title: "The Circle That Keeps Spiraling",
+    description:
+      "Mastery compresses technique until time and power start to dilate.",
+    image: "art/s3/3-the-circle-that-keeps-spiraling.png",
+    listenUrl: "https://open.spotify.com/episode/0JVIk2u5kOvGffqmTLflK1",
+  },
+  {
+    season: "6",
+    episode: "14",
+    seasonEpisode: "04",
+    title: "Growing Weightlessness Feels Grounding",
+    description:
+      "Autonomy is not freedom from structure but the grammar that makes becoming possible.",
+    image: "art/s3/4-weightlessness.png",
+    listenUrl: "https://open.spotify.com/episode/0bw2mqi1HbQ8kmLRysj7Ds",
+  },
+  {
+    season: "6",
+    episode: "15",
+    seasonEpisode: "05",
+    title: "The Water Shapes the Vessel That Holds It",
+    description:
+      "Mastery begins by fitting the conditions that are already shaping you.",
+    image: "art/s3/5-the-water-that-holds.png",
+    listenUrl: "https://open.spotify.com/episode/1tX8dNbZSLC9LRJh5N2LYr",
+  },
+  {
+    season: "6",
+    episode: "16",
+    seasonEpisode: "06",
+    title: "What Speaks When You Stop",
+    description:
+      "Presence is not preparation for creative work but the creative work itself.",
+    image: "art/s3/6-stop-speaking.png",
+    listenUrl: "https://open.spotify.com/episode/1nbH3mKhDJYaIIzlCi9IG6",
+  },
+  {
+    season: "6",
+    episode: "17",
+    seasonEpisode: "07",
+    title: "The Ordinary Was Always the Destination",
+    description:
+      "Mastery can end by revealing that nothing ever needed to be transcended.",
+    image: "art/s3/7-ordinary.png",
+    listenUrl: "https://open.spotify.com/episode/3SZRWmNK5mI2bgUr9q0kUH",
+  },
+  {
+    season: "6",
+    episode: "18",
+    seasonEpisode: "08",
+    title: "To Have Is to Have Already Left",
+    description:
+      "The object loses its charm the moment it is possessed; living value keeps moving.",
+    image: "art/s3/8-arrive.png",
+    listenUrl: "https://open.spotify.com/episode/6Sq6zvE1dGSU0h9J8v8W9J",
+  },
 ].map((episode) => ({
   ...episode,
   displayNumber: Number(episode.episode),
-  seasonCode: `S${episode.season}E${episode.episode}`,
+  seasonEpisode: episode.seasonEpisode || episode.episode,
+  seasonCode: `S${episode.season}E${episode.seasonEpisode || episode.episode}`,
   pageUrl: buildEpisodePageHref(episode.season, episode.episode),
 }));
+
+const latestEpisodeKey = episodeCatalog.at(-1)?.episode || "10";
 
 const seasonCatalog = {
   "2": {
@@ -135,19 +220,39 @@ const seasonCatalog = {
       "10": "E10. Every Real Learning Is a Small Death",
     },
   },
+  "6": {
+    menuLabel:
+      "Season 6, The Koans You Carry. Eight new episodes on frame-breaking, polarity, mastery, silence, and the ordinary",
+    shortLabel: "The Koans You Carry",
+    episodes: {
+      "11": "E01. The Sound of Your Frame Breaking",
+      "12": "E02. There's a Space Between Left and Right That's Right",
+      "13": "E03. The Circle That Keeps Spiraling",
+      "14": "E04. Growing Weightlessness Feels Grounding",
+      "15": "E05. The Water Shapes the Vessel That Holds It",
+      "16": "E06. What Speaks When You Stop",
+      "17": "E07. The Ordinary Was Always the Destination",
+      "18": "E08. To Have Is to Have Already Left",
+    },
+  },
 };
 
 const thinkerCatalog = {
   "Agnes Callard": { wikiTitle: "Agnes_Callard" },
+  "Alfred North Whitehead": { wikiTitle: "Alfred_North_Whitehead" },
+  "Ann Graybiel": { displayName: "Ann M. Graybiel", wikiTitle: "Ann_M._Graybiel" },
   "Charles Limb": { wikiTitle: "Charles_Limb" },
+  "Charles Taylor": { wikiTitle: "Charles_Taylor_(philosopher)" },
   "Copland": { displayName: "Aaron Copland", wikiTitle: "Aaron_Copland" },
   "Csikszentmihalyi": {
     displayName: "Mihaly Csikszentmihalyi",
     wikiTitle: "Mihaly_Csikszentmihalyi",
   },
+  "Daniel Kahneman": { wikiTitle: "Daniel_Kahneman" },
   "Dogen Zenji": { displayName: "Dōgen Zenji", wikiTitle: "Dōgen" },
   "Dōgen Zenji": { displayName: "Dōgen Zenji", wikiTitle: "Dōgen" },
   "Dreyfus": { displayName: "Hubert Dreyfus", wikiTitle: "Hubert_Dreyfus" },
+  "Edward Deci": { wikiTitle: "Edward_L._Deci" },
   "Esther Perel": { wikiTitle: "Esther_Perel" },
   "Feldenkrais": { displayName: "Moshe Feldenkrais", wikiTitle: "Moshe_Feldenkrais" },
   "Feynman": {
@@ -157,7 +262,10 @@ const thinkerCatalog = {
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/en/thumb/4/42/Richard_Feynman_Nobel.jpg/330px-Richard_Feynman_Nobel.jpg",
   },
+  "George Leonard": { wikiTitle: "George_Leonard" },
+  "Gregory Bateson": { wikiTitle: "Gregory_Bateson" },
   "Heidegger": { displayName: "Martin Heidegger", wikiTitle: "Martin_Heidegger" },
+  "Martin Heidegger": { wikiTitle: "Martin_Heidegger" },
   "Heidi Priebe": {
     imageUrl:
       "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2002207/settings_images/d2df2c-7b48-1833-fb4-f7cfd45a2a8_365cf66f-3714-4d10-badd-cbef0e17acf5.jpg",
@@ -165,15 +273,39 @@ const thinkerCatalog = {
       "Heidi Priebe is a writer, speaker, and author specializing in attachment theory and developmental psychology.",
     wikiSearch: "Heidi Priebe",
   },
+  "Heraclitus": { wikiTitle: "Heraclitus" },
   "Huizinga": { displayName: "Johan Huizinga", wikiTitle: "Johan_Huizinga" },
+  "Iain McGilchrist": { wikiTitle: "Iain_McGilchrist" },
+  "Isaiah Berlin": { wikiTitle: "Isaiah_Berlin" },
   "Iris Murdoch": { wikiTitle: "Iris_Murdoch" },
   "James Clear": { wikiTitle: "James_Clear" },
+  "James Gibson": { displayName: "James J. Gibson", wikiTitle: "James_J._Gibson" },
   "Jorge Luis Borges": { wikiTitle: "Jorge_Luis_Borges" },
   "John Keats": { wikiTitle: "John_Keats" },
+  "John Cage": { wikiTitle: "John_Cage" },
+  "K. Anders Ericsson": { wikiTitle: "K._Anders_Ericsson" },
+  "Karl Friston": { wikiTitle: "Karl_J._Friston" },
+  "Kent Berridge": { wikiTitle: "Kent_Berridge" },
   "L.A. Paul": { displayName: "L. A. Paul", wikiTitle: "L._A._Paul" },
   "Lavelle": { displayName: "Louis Lavelle", wikiTitle: "Louis_Lavelle" },
+  "Leo Tolstoy": { wikiTitle: "Leo_Tolstoy" },
   "Marcus Aurelius": { wikiTitle: "Marcus_Aurelius" },
+  "Marcus Raichle": { wikiTitle: "Marcus_Raichle" },
   "McGilchrist": { displayName: "Iain McGilchrist", wikiTitle: "Iain_McGilchrist" },
+  "Mark Beeman": {
+    imageUrl:
+      "https://psychology.northwestern.edu/images/people/faculty/beeman,-mark-168x210.gif",
+    wikiSearch: "Mark Beeman",
+    wikiUrl:
+      "https://psychology.northwestern.edu/people/faculty/core/profiles/mark-beeman.html",
+  },
+  "Mary Helen Immordino-Yang": {
+    imageUrl:
+      "https://rossier.usc.edu/sites/default/files/profile_import/geg6f5g881677158b4bd37b49edg58-Mary%20Helen-Immordino-Yang.jpg",
+    wikiSearch: "Mary Helen Immordino-Yang",
+    wikiUrl:
+      "https://rossier.usc.edu/faculty-research/directory/maryhelen-immordinoyang",
+  },
   "Merleau-Ponty": {
     displayName: "Maurice Merleau-Ponty",
     wikiTitle: "Maurice_Merleau-Ponty",
@@ -181,6 +313,7 @@ const thinkerCatalog = {
   "Miles Davis": { wikiTitle: "Miles_Davis" },
   "Erich Fromm": { wikiTitle: "Erich_Fromm" },
   "Martin Buber": { wikiTitle: "Martin_Buber" },
+  "Nagarjuna": { displayName: "Nagarjuna", wikiTitle: "Nagarjuna" },
   "Nassim Taleb": {
     displayName: "Nassim Nicholas Taleb",
     wikiTitle: "Nassim_Nicholas_Taleb",
@@ -197,10 +330,15 @@ const thinkerCatalog = {
       "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Pirsig2005_%28cropped%29.jpg/330px-Pirsig2005_%28cropped%29.jpg",
   },
   "Polanyi": { displayName: "Michael Polanyi", wikiTitle: "Michael_Polanyi" },
+  "Peter Suedfeld": { wikiTitle: "Peter_Suedfeld" },
   "Reed Montague": { displayName: "Read Montague", wikiTitle: "Read_Montague" },
   "Rilke": { displayName: "Rainer Maria Rilke", wikiTitle: "Rainer_Maria_Rilke" },
+  "Rainer Maria Rilke": { wikiTitle: "Rainer_Maria_Rilke" },
+  "Robert Kegan": { wikiTitle: "Robert_Kegan" },
   "Seneca": { displayName: "Seneca", wikiTitle: "Seneca_the_Younger" },
+  "Shunryu Suzuki": { wikiTitle: "Shunryu_Suzuki" },
   "Simone Weil": { wikiTitle: "Simone_Weil" },
+  "Sonja Lyubomirsky": { wikiTitle: "Sonja_Lyubomirsky" },
   "Socrates": {
     displayName: "Socrates",
     wikiTitle: "Socrates",
@@ -208,7 +346,9 @@ const thinkerCatalog = {
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Socrates_Louvre.jpg/330px-Socrates_Louvre.jpg",
   },
+  "Stanley Cavell": { wikiTitle: "Stanley_Cavell" },
   "Steinbeck": { displayName: "John Steinbeck", wikiTitle: "John_Steinbeck" },
+  "Stephen Porges": { wikiTitle: "Stephen_Porges" },
   "Thomas Kuhn": { wikiTitle: "Thomas_Kuhn" },
   "Austin Osman Spare": { wikiTitle: "Austin_Osman_Spare" },
   "Vervaeke": {
@@ -221,6 +361,7 @@ const thinkerCatalog = {
   "Waitzkin": { displayName: "Josh Waitzkin", wikiTitle: "Joshua_Waitzkin" },
   "William James": { wikiTitle: "William_James" },
   "Winnicott": { displayName: "Donald Winnicott", wikiTitle: "Donald_Winnicott" },
+  "Zhuangzi": { wikiTitle: "Zhuangzi" },
 };
 
 const buildWikiUrl = (title) => `https://en.wikipedia.org/wiki/${encodeURIComponent(title)}`;
@@ -340,9 +481,10 @@ const hydrateThinkerCards = async (root) => {
   );
 };
 
-const defaultSeason = "2";
+const defaultSeason = episodeCatalog.at(-1)?.season || "2";
 const fallbackNotesData = window.NOTES_DATA || {};
-const seasonNotes = window.SEASON_NOTES || { [defaultSeason]: fallbackNotesData };
+const seasonNotes = window.SEASON_NOTES || { "1": fallbackNotesData };
+const allEpisodeNotes = Object.assign({}, ...Object.values(seasonNotes));
 const episodeModalTitleBase = "Memories from My Future Self";
 let modalHideTimeoutId = 0;
 let activeModalEpisode = null;
@@ -354,23 +496,22 @@ const buildEpisodeEmbedUrl = (listenUrl) =>
     : listenUrl.replace("open.spotify.com/show/", "open.spotify.com/embed/show/");
 
 const getSafeEpisodeKey = (episodeKey) => {
-  if (seasonNotes[defaultSeason]?.[episodeKey]) {
+  if (allEpisodeNotes[episodeKey]) {
     return episodeKey;
   }
 
-  return episodeCatalog[0]?.episode || "01";
+  return latestEpisodeKey;
 };
 
 const getEpisodeMeta = (episodeKey) =>
-  episodeCatalog.find(
-    (episode) => episode.season === defaultSeason && episode.episode === episodeKey
-  ) || episodeCatalog[0];
+  episodeCatalog.find((episode) => episode.episode === episodeKey) ||
+  episodeCatalog.at(-1) ||
+  episodeCatalog[0];
 
 const getEpisodeDetailData = (episodeKey) => {
   const safeEpisode = getSafeEpisodeKey(episodeKey);
   const episodeMeta = getEpisodeMeta(safeEpisode);
-  const episodeHtml =
-    seasonNotes[defaultSeason]?.[safeEpisode] || seasonNotes[defaultSeason]?.["01"] || "";
+  const episodeHtml = allEpisodeNotes[safeEpisode] || allEpisodeNotes[latestEpisodeKey] || "";
   const parser = new DOMParser();
   const parsed = parser.parseFromString(
     `<div class="episode-source-root">${episodeHtml}</div>`,
@@ -412,7 +553,7 @@ const renderEpisodeBrowseCards = (currentEpisode = null) =>
     .map(
       (episode) => `
         <article
-          class="episode-browse-card${episode.episode === "08" ? " is-featured" : ""}${
+          class="episode-browse-card${episode.episode === latestEpisodeKey ? " is-featured" : ""}${
             currentEpisode === episode.episode ? " is-current" : ""
           }"
           style="--episode-image: url('${episode.image}'); --episode-image-position: ${
@@ -527,12 +668,17 @@ const setEpisodeModalMarkup = (episodeKey) => {
       <p>${storyParagraph}</p>
     </section>
 
+    ${
+      thinkerNames.length
+        ? `
     <section class="episode-page-panel episode-page-thinkers">
       <div class="episode-page-panel-label">Thinkers</div>
       <div class="episode-thinker-grid">
         ${renderThinkerCards(thinkerNames)}
       </div>
-    </section>
+    </section>`
+        : ""
+    }
 
     <section class="episode-page-panel episode-page-library">
       <div class="episode-page-panel-label">Episodes</div>
@@ -1005,22 +1151,22 @@ if (episodesGrid) {
 if (notesRoot) {
   const searchParams = new URLSearchParams(window.location.search);
   const legacyNotesData = window.NOTES_DATA || {};
-  const seasonNotes = window.SEASON_NOTES || { "2": legacyNotesData };
+  const seasonNotes = window.SEASON_NOTES || { "1": legacyNotesData };
+  const allEpisodeNotes = Object.assign({}, ...Object.values(seasonNotes));
   const episodeLinks = document.querySelectorAll("[data-episode-link]");
   const currentSeasonLabel = document.querySelector("[data-current-season]");
   const currentEpisodeLabel = document.querySelector("[data-current-episode]");
-  const activeSeason = "2";
-  const activeSeasonNotes = seasonNotes[activeSeason] || {};
-  const availableEpisodes = Object.keys(activeSeasonNotes);
-  const fallbackEpisode = availableEpisodes[0] || "01";
+  const fallbackEpisode = latestEpisodeKey;
   const requestedEpisode = searchParams.get("episode") || fallbackEpisode;
-  const activeEpisode = activeSeasonNotes[requestedEpisode] ? requestedEpisode : fallbackEpisode;
-  const bodyContent = activeSeasonNotes[activeEpisode] || activeSeasonNotes[fallbackEpisode];
+  const activeEpisode = allEpisodeNotes[requestedEpisode] ? requestedEpisode : fallbackEpisode;
+  const activeMeta = getEpisodeMeta(activeEpisode);
+  const activeSeason = activeMeta?.season || defaultSeason;
+  const bodyContent = allEpisodeNotes[activeEpisode] || allEpisodeNotes[fallbackEpisode];
   const buildEpisodeHref = (seasonKey, episodeKey) =>
     buildEpisodePageHref(seasonKey, episodeKey);
 
   episodeLinks.forEach((link) => {
-    const linkSeason = link.getAttribute("data-season-link") || "2";
+    const linkSeason = link.getAttribute("data-season-link") || activeSeason;
     const linkEpisode = link.getAttribute("data-episode-link");
 
     if (linkSeason === activeSeason && linkEpisode === activeEpisode) {
@@ -1038,7 +1184,7 @@ if (notesRoot) {
   if (currentEpisodeLabel) {
     currentEpisodeLabel.textContent =
       seasonCatalog[activeSeason]?.episodes?.[activeEpisode] ||
-      seasonCatalog["2"].episodes["01"];
+      `E${activeMeta?.seasonEpisode || activeEpisode}. ${activeMeta?.title || ""}`;
   }
 
   if (bodyContent) {
@@ -1090,11 +1236,14 @@ if (notesRoot) {
     const nextEpisode = notesRoot.querySelector(".next-episode");
 
     if (nextEpisode) {
-      const episodeOrder = Object.keys(seasonCatalog[activeSeason]?.episodes || {});
-      const currentIndex = episodeOrder.indexOf(activeEpisode);
-      const nextEpisodeKey = episodeOrder[currentIndex + 1];
-      let nextTitle = seasonCatalog[activeSeason]?.episodes?.[nextEpisodeKey];
-      let nextHref = nextEpisodeKey ? buildEpisodeHref(activeSeason, nextEpisodeKey) : null;
+      const currentIndex = episodeCatalog.findIndex((episode) => episode.episode === activeEpisode);
+      const nextMeta =
+        currentIndex >= 0 && currentIndex < episodeCatalog.length - 1
+          ? episodeCatalog[currentIndex + 1]
+          : null;
+      let nextTitle =
+        nextMeta && seasonCatalog[nextMeta.season]?.episodes?.[nextMeta.episode];
+      let nextHref = nextMeta ? buildEpisodeHref(nextMeta.season, nextMeta.episode) : null;
       const existingParagraph = nextEpisode.querySelector("p");
 
       if (nextTitle && nextHref) {

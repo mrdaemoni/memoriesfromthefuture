@@ -203,9 +203,216 @@ const buildSeasonTwoEpisode = (episode) => `
   </footer>
 `;
 
+const seasonThreeDescription =
+  "Season 6: The Koans You Carry gathers eight episodes around paradoxes that cannot be solved by force. Frames break, opposites are held together, mastery spirals, silence starts speaking, and the ordinary life returns as the place where wisdom was hiding all along.";
+
+const seasonThreeFormat =
+  "Alicia and Hector use the vault as a bridge across time, carrying koans instead of conclusions and letting paradox do the work that explanation alone cannot finish.";
+
+const seasonThreeEpisodes = [
+  {
+    number: "11",
+    seasonEpisode: "01",
+    title: "The Sound of Your Frame Breaking",
+    provocation:
+      "\"The deepest ignorance is not what you fail to know but the frame you do not know you are inside.\"",
+    summary:
+      "The season opens with its most fundamental question — what happens when you can't see the thing that's shaping everything you see? The frame is the cognitive architecture you inhabit without knowing it. Pirsig tracked systems of ideas, not ideas. McGilchrist showed the left hemisphere forgets it serves something larger. This episode maps the invisible walls and asks what it takes to hear them crack.",
+    thinkers:
+      "Gregory Bateson · Thomas Kuhn · Shunryu Suzuki · Mark Beeman · Iain McGilchrist",
+    arc:
+      "Season 6 opens with rupture, naming the invisible structure that shapes perception before conscious choice ever gets involved.",
+    threshold:
+      "This episode is about recognizing that disorientation can be evidence of contact with a larger reality, not proof that something has gone wrong.",
+    nextTeaser:
+      "From broken frames, the season moves into the interval between opposites and asks what kind of simplicity can hold both sides at once.",
+  },
+  {
+    number: "12",
+    seasonEpisode: "02",
+    title: "There's a Space Between Left and Right That's Right",
+    provocation:
+      "\"There are two simplicities and the entire path of quality runs between them.\"",
+    summary:
+      "The second koan sits with the space between poles. Berlin's fox and hedgehog, Nagarjuna's tetralemma, Pirsig's romantic and classical. The episode traces how the greatest thinkers were not those who chose a side but those who held the tension between sides — and how integrative complexity, measured empirically, predicts breakthrough decisions over catastrophic ones.",
+    thinkers:
+      "Alfred North Whitehead · Isaiah Berlin · Nagarjuna · Peter Suedfeld",
+    arc:
+      "After rupture, Season 6 searches for a more mature orientation: not collapsing into either side, but learning to inhabit the fertile space between them.",
+    threshold:
+      "The work here is not compromise but discernment, finding the form of rightness that appears only when opposites stop behaving like enemies.",
+    nextTeaser:
+      "Then the season turns from polarity to practice and asks how mastery keeps circling back while still moving somewhere new.",
+  },
+  {
+    number: "13",
+    seasonEpisode: "03",
+    title: "The Circle That Keeps Spiraling",
+    provocation:
+      "\"Mastery is the art of making smaller circles — compression of technique is what dilates both time and power.\"",
+    summary:
+      "The third koan emerged in a sauna — the realization that mastery doesn't expand outward but compresses inward. Leonard's plateaus, Ericsson's deliberate practice, and the neuroscience of myelination all point to the same paradox: the spiral looks like repetition from outside, but from inside, each pass changes the passer.",
+    thinkers: "George Leonard · K. Anders Ericsson · Ann Graybiel",
+    arc:
+      "Season 6 reframes progress as spiral, showing that the return is not regression when each pass gathers more precision and more range.",
+    threshold:
+      "What looks externally like repetition may be, from the inside, the exact mechanism by which depth, speed, and subtlety begin to accumulate.",
+    nextTeaser:
+      "The next movement asks what autonomy really feels like when structure stops being oppressive and starts becoming supportive.",
+  },
+  {
+    number: "14",
+    seasonEpisode: "04",
+    title: "Growing Weightlessness Feels Grounding",
+    provocation:
+      "\"Autonomy is not freedom from structure but the grammar that makes becoming possible.\"",
+    summary:
+      "The fourth koan holds a paradox about freedom — that true autonomy comes not from throwing off structure but from integrating it so deeply that the structure becomes invisible. Deci and Ryan's self-determination theory, Kegan's subject-object shifts, and Porges's polyvagal theory all converge on the same insight: freedom is built on foundations you no longer feel carrying you.",
+    thinkers: "Edward Deci · Robert Kegan · Stephen Porges",
+    arc:
+      "By midseason, freedom is no longer imagined as escape. It is recast as the right fit between form, practice, and the person being made by both.",
+    threshold:
+      "This episode explores the paradox that the lighter and more natural a life feels, the more disciplined its hidden grammar usually is.",
+    nextTeaser:
+      "From there, the season asks what happens when conditions themselves become teachers rather than obstacles to overcome.",
+  },
+  {
+    number: "15",
+    seasonEpisode: "05",
+    title: "The Water Shapes the Vessel That Holds It",
+    provocation:
+      "\"Mastery begins not in conquering conditions but in fitting them — affordance is what Zen calls naturalness and the Stoics call acceptance.\"",
+    summary:
+      "The season's pivot point — the first koan Alicia proposes rather than Hector. This is where the vault begins to speak back in its own paradoxes. Gibson's affordance theory, the Stoic amor fati, Zhuangzi's Cook Ding, and Friston's free energy principle all converge on mastery as fitting rather than conquering. The water doesn't fight the vessel — it becomes the vessel's shape, and in doing so, shapes the vessel.",
+    thinkers: "James Gibson · Zhuangzi · Karl Friston · Marcus Aurelius",
+    arc:
+      "Season 6 moves from internal grammar to environmental fit, showing that form emerges relationally between person, constraint, and world.",
+    threshold:
+      "The lesson here is not passivity but responsiveness: discovering what becomes possible when resistance is met with attunement instead of denial.",
+    nextTeaser:
+      "Once fit replaces force, the season can ask a harder question: what remains when you stop talking, striving, and performing long enough to actually hear?",
+  },
+  {
+    number: "16",
+    seasonEpisode: "06",
+    title: "What Speaks When You Stop",
+    provocation:
+      "\"Presence is not preparation for creative work but the creative work itself.\"",
+    summary:
+      "What happens when you stop producing, stop solving, stop speaking? This episode sits with the radical idea that silence is not the absence of activity but its deepest form. Cage's 4'33\" proved that there is no such thing as silence — only sounds you weren't attending to. Heidegger's Gelassenheit described the deepest thinking as a kind of waiting. The Japanese concept of ma (the space between) and the neuroscience of the default mode network converge on the same revelation: what speaks when you stop is the most important voice you have.",
+    thinkers:
+      "John Cage · Martin Heidegger · Marcus Raichle · Mary Helen Immordino-Yang",
+    arc:
+      "Season 6 turns inward without becoming private, insisting that presence is not a prelude to life but one of the most demanding forms of life.",
+    threshold:
+      "When the noise of self-management softens, a different kind of speech begins to emerge - one less controlled, but often more true.",
+    nextTeaser:
+      "That discovery prepares the return to the world, where the season finds that the ordinary was never beneath us, only beneath our notice.",
+  },
+  {
+    number: "17",
+    seasonEpisode: "07",
+    title: "The Ordinary Was Always the Destination",
+    provocation:
+      "\"The ordinary was the destination all along — what mastery discovers is that nothing needed to be transcended.\"",
+    summary:
+      "The penultimate koan overturns the assumption that wisdom lives at the peak. Cavell's moral perfectionism, Tolstoy's Ivan Ilyich, Taylor's affirmation of ordinary life, and Kahneman's experiencing self all converge: the extraordinary was hiding inside the ordinary all along. The Zen saying — before enlightenment, chop wood; after enlightenment, chop wood — is not a joke. It is the deepest thing the tradition has to say.",
+    thinkers:
+      "Stanley Cavell · Leo Tolstoy · Charles Taylor · Daniel Kahneman · Sonja Lyubomirsky",
+    arc:
+      "The season's late revelation is that depth does not end by escaping the world. It ends by returning to it with a different capacity to notice and receive.",
+    threshold:
+      "The ordinary stops looking flat once you have been altered enough to meet it without demand, drama, or the hunger to be elsewhere.",
+    nextTeaser:
+      "The final episode asks what possession gets wrong about reality and why living value is always already departing from the forms that try to capture it.",
+  },
+  {
+    number: "18",
+    seasonEpisode: "08",
+    title: "To Have Is to Have Already Left",
+    provocation:
+      "\"The object loses its charm the moment it is possessed — Dynamic Quality is always already departing from what you have caught.\"",
+    summary:
+      "The season closes with its most paradoxical koan — that having is the mechanism by which things depart. Fromm's distinction between having mode and being mode, Rilke's insistence that love protects the solitude of the other, and Berridge's neuroscience of wanting vs liking converge on Pirsig's deepest insight: Dynamic Quality is always already departing from what you have caught. The season ends not with resolution but with the recognition that resolution is the wrong desire.",
+    thinkers:
+      "Erich Fromm · Rainer Maria Rilke · Heraclitus · Kent Berridge",
+    arc:
+      "Season 6 closes by returning to the moving edge of value, where life exceeds possession and every arrival teaches you how partial ownership really is.",
+    threshold:
+      "This finale turns possession into a spiritual problem and asks what it would mean to relate to value as something participatory, passing, and alive.",
+    nextTeaser:
+      "Season 6 closes here, not with control, but with a deeper reverence for what keeps moving just beyond the hand that wants to hold it.",
+  },
+];
+
+const buildSeasonThreeEpisode = (episode) => `
+  <header class="podcast-header">
+    <div class="podcast-name">Memories from My Future Self</div>
+    <h1 class="episode-title">${episode.title}</h1>
+    <div class="episode-subtitle">Season 6, Episode ${Number(episode.seasonEpisode)} — The Koans You Carry</div>
+    <div class="episode-meta">Everything I wish I'd known sooner</div>
+    <div class="season-name">${seasonThreeFormat}</div>
+  </header>
+
+  <div class="provocation">
+    <div class="provocation-label">Season Premise</div>
+    <p>${episode.provocation}</p>
+  </div>
+
+  <section class="episode-summary">
+    <h2 class="section-title">What This Episode Is About</h2>
+    <p>${episode.summary}</p>
+    <p>${seasonThreeDescription}</p>
+  </section>
+
+  <section class="key-ideas">
+    <h2 class="section-title">Why It Matters</h2>
+    <div class="key-idea">
+      <strong>Season Arc</strong> - ${episode.arc}
+    </div>
+    <div class="key-idea">
+      <strong>Thinkers</strong> - ${episode.thinkers}
+    </div>
+    <div class="key-idea">
+      <strong>Threshold</strong> - ${episode.threshold}
+    </div>
+  </section>
+
+  <section class="sources">
+    <h2 class="section-title">Season Context</h2>
+    <div class="source-card">
+      <div class="author">Season 6</div>
+      <div class="title">The Koans You Carry</div>
+      <div class="description">${seasonThreeDescription}</div>
+    </div>
+    <div class="source-card">
+      <div class="author">Format</div>
+      <div class="title">Two voices across time</div>
+      <div class="description">${seasonThreeFormat}</div>
+    </div>
+  </section>
+
+  <div class="next-episode">
+    <h3>Next Episode</h3>
+    <p>${episode.nextTeaser}</p>
+  </div>
+
+  <footer class="footer">
+    <p><strong>Memories from My Future Self</strong></p>
+    <p>Everything I Wish I'd Known Sooner</p>
+    <p><a href="https://fromfutureself.com">fromfutureself.com</a></p>
+  </footer>
+`;
+
 window.SEASON_NOTES = {
   "1": window.NOTES_DATA,
   "2": Object.fromEntries(
     seasonTwoEpisodes.map((episode) => [episode.number, buildSeasonTwoEpisode(episode)])
+  ),
+  "3": Object.fromEntries(
+    seasonThreeEpisodes.map((episode) => [episode.number, buildSeasonThreeEpisode(episode)])
+  ),
+  "6": Object.fromEntries(
+    seasonThreeEpisodes.map((episode) => [episode.number, buildSeasonThreeEpisode(episode)])
   ),
 };
